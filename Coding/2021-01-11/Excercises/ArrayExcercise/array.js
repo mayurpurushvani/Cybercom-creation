@@ -1,0 +1,10 @@
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits);
+fruits.pop();
+console.log(fruits);
+fruits.push('gwawa');
+console.log(fruits);
+fruits.unshift('fresh fruits');
+console.log(fruits);
+fruits.shift();
+console.log(fruits);
