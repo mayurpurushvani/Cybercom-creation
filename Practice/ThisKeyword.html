@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>This Keyword</title>
+    </head>
+    <script>
+        
+        //console.log(this);
+
+        calculateAge(1999);
+
+        function calculateAge(year)
+        {
+            console.log(2020 - year);
+            console.log(this);
+        } 
+
+        var mayur = {
+            name : 'mayur',
+            birthdate : 1999 ,
+            calculateAge : function()
+            {
+                console.log(this);
+                console.log(2020 - this.birthdate);
+                
+               /* function innerFunction()
+                {
+                    console.log(this);
+                }
+                innerFunction(); */
+            }
+        }
+        mayur.calculateAge();
+
+        var mike = {
+            name : 'mike',
+            birthdate : 1998
+        };
+
+        mike.calculateAge = mayur.calculateAge;
+        mike.calculateAge();
+
+
+    </script>
+</html>

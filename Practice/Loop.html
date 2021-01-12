@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Loop Example</title>
+    </head>
+    <script>
+        //1
+        for (var j = 0; j<10; j++)
+        {
+            console.log(j);
+        }
+        //2
+        var mayur = ['mayur','vasudev','purushvani'];
+        for (var i = 0;i<mayur.length;i++)
+        {
+            console.log(mayur[i]);
+        }
+        //3
+        var mp = ['mayur','vasudev','purushvani'];
+        var i = 0;
+        while ( i < mp.length)
+        {
+            console.log(mayur[i]);
+            i++;
+        }
+        //4 CONTINUE
+        var mvp = ['mayur','vasudev',1999,'purushvani',true];
+        for (var i = 0; i <  mvp.length; i ++)
+        {
+            if(typeof mvp[i] !== 'string') continue;
+            console.log(mvp[i]);
+        }
+        //5 BREAK
+        for (var i = 0; i <  mvp.length; i ++)
+        {
+            if(typeof mvp[i] !== 'string') break;
+            console.log(mvp[i]);
+        }
+        //6 BACKWARD LOOP
+        for(var i = mvp.length - 1; i>=0; i--)
+        {
+            console.log(mvp[i]);
+        }
+    </script>
+</html>

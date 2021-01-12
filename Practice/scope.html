@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Scope Example</title>
+    </head>
+    <script>
+        var a = 'Hello!';
+        first();
+
+        function first()
+        {
+            var b = 'Hi!';
+            second();
+
+            function second()
+            {
+                var c = 'Hey!';
+                console.log(a+b+c);
+                third();
+            }
+        }
+        function third()
+        {
+            var d = 'mayur';
+            console.log(a+b+c+d);
+        }
+    </script>
+</html>

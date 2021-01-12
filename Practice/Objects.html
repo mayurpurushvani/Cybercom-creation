@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Oject Example</title>
+    </head>
+    <script>
+        /*
+        var mayur  = {
+            firstName : 'mayur',
+            lastName : 'purushvani',
+            birthYear : 1999,
+            family : ['dad','mom','sister'],
+            isMarried : false
+        };
+        console.log(mayur);
+        console.log(mayur.firstName);
+        mayur.birthYear = 1998;
+        mayur.isMarried = true;
+        console.log(mayur);
+
+        var abcd = new Object();
+        abcd.firstName = 'abcd';
+        abcd.isMarried = false;
+        console.log(abcd); */
+
+        
+        var mayur  = {
+            firstName : 'mayur',
+            lastName : 'purushvani',
+            birthYear : 1999,
+            family : ['dad','mom','sister'],
+            isMarried : false,
+            calcAge : function()
+            {
+                this.age = 2020 - this.birthYear
+            }
+        };
+        mayur.calcAge();
+        console.log(mayur);
+
+    </script>
+</html>

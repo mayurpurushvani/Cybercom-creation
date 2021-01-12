@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Hoisting Example</title>
+    </head>
+    <script>
+        //Region FUNNCTION
+        //Fucntion Declaration
+        calculateAge(1999) //Before 
+        function calculateAge(year)
+        {
+            console.log(2020 - year);
+        }
+         calculateAge(1999) //After
+
+
+        //Fucntion Expression
+        //calculateAge1(1999) //Before
+        var calculateAge1 = function(year)
+        {
+            console.log(year);
+        }
+        calculateAge1(1999) //After
+        //End Region FUNCTION
+
+        //Region Variables
+
+        //Variables
+        console.log(age);  //Before
+        var age = 22;
+        function foo()
+        {
+            console.log(age);  //Before local
+            var age = 65;
+            console.log(age);  //After local
+        }
+        foo();
+        console.log(age);  //After
+        //End Region Variables
+
+    </script>
+</html>
