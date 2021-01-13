@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Local & Sessio Storage Check from rowser</title>
+    </head>
+    <script>
+/* Region Local Storage */
+function storageON() 
+{
+    try 
+    {
+        localStorage.setItem("name", "mayur purushvani");
+    } 
+    catch (e) 
+    {
+        return false;
+    } 
+    return true;
+}
+
+if (storageON()) 
+{    
+    localStorage.getItem('name'); 
+}
+
+else
+{
+    alert("Please check your browser site data is on or not!");
+}
+
+/* Region Session Storage */
+
+function storageON() 
+{
+    try 
+    {
+        sessionStorage.setItem("name", "mayur purushvani");
+    } 
+    catch (e) 
+    {
+        return false;
+    } 
+    return true;
+}
+
+if (storageON()) 
+{    
+    sessionStorage.getItem('name'); 
+}
+
+else
+{
+    alert("Please check your browser site data is on or not!");
+}
+
+
+</script>
+</html>
