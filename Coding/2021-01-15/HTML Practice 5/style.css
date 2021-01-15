@@ -1,0 +1,32 @@
+th
+{
+    background-color: #c3ffbd;
+}
+td.first 
+{
+    background-color: #c4deff;
+}
+td.second
+{
+    background-color: #ffffff;
+}
+td.third
+{
+    background-color: #fbbfc1;
+}
+td.forth
+{
+    background-color: #ffffc3;
+}
+p {
+    display:list-item;
+    list-style:disc inside;
+    padding:0 0 0 14px;
+    margin:0;
+}
+tr
+{
+    text-align: left ;
+    font-size: 15px;
+    
+}
