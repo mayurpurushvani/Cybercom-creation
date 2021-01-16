@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>HTML Practice 5</title>
+
+<link rel="stylesheet" type="text/css" href="css/main.css">
+
+</head>
+<body>
+    
+<div class="base">
+<div class="context">
+
+<div class="title" style="background-image: url(icons/bg-02.jpg);">
+
+    <span class="title-1">
+        Contact Us
+    </span>
+
+</div>
+
+<div id="error_message"></div>
+
+<form class="form" onsubmit="return validate();">
+
+    <div class="input">
+        <input class="input100" type="text" id = "name" name="name" placeholder="&#xf2c0;       Full Name" onkeyup="validationName">
+    </div>
+
+    <div class="input">
+        <input class="input100" type="text" id = "email" name="email" placeholder="&#xf0e0;      Eg. example@gmail.com">
+    </div>
+
+    <div class="input">
+        <input class="input100" type="text" id = " phone" name="phone" placeholder="&#xf10b;      Eg. +1 800 000000">
+    </div>
+
+    <div class="input">
+        <textarea class="input100" name="message" id = "message" placeholder="&#xf0e5;     Your Comments..."></textarea>
+    </div>
+
+    <input type="submit" class="btn" id="submit" value= "SEND NOW">
+    
+</form>
+</div>
+
+</div>
+
+<script>
+
+    function validate()
+    {
+        alert("Your request has been submitted !");
+    }
+ 
+    
+</script>
+    <script src="https://kit.fontawesome.com/5e9083c057.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
