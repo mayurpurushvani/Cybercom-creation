@@ -1,0 +1,43 @@
+body
+{
+
+}
+
+.input
+{
+    
+    margin-left: 120px;
+}
+
+.input-100
+{
+    margin-left: 25px;
+}
+.input-101
+{
+    margin-left: 25px;
+    width: 130px;
+    height: 70px;
+    resize: none;
+}
+
+.input-102
+{
+    margin-left: 25px;
+    height: 70px;
+    width: 80px;
+    resize: none;
+}
+.bold
+{
+    font-weight: bold;
+}
+input[type="submit"] 
+{
+    margin-top: 10px;
+}
+
+input[type="reset"]
+{
+    margin-top: 10px;
+}
