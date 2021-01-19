@@ -1,0 +1,89 @@
+.input
+{
+    margin-left: 10px;    
+    justify-content: flex-start;
+    display: flex;
+    width: 55%;
+}
+.input-100
+{
+    margin-left: 10px;    
+    justify-content: flex-start;
+    display: flex;
+    max-width: 10%;
+}
+.star
+{
+    color: red;
+}
+.align
+{
+    display: flex;
+    padding-top: 11px;
+}
+.heading
+{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    display: flex;
+    margin-left: 20px;
+}
+.dropdown
+{
+    margin-left: 10px;
+    justify-content: flex-end;
+    display: flex;
+}
+.text-below
+{
+    margin-left: 130px;
+    justify-content: flex-start;
+    display: flex;
+}
+.select
+{
+    margin-left: 10px;    
+    justify-content: flex-start;
+    display: flex;
+}
+.label-100
+{
+    width: 120px;
+    justify-content: flex-end;
+    display: flex;
+}
+.box
+{
+    margin-left : auto;
+    margin-right: auto;
+    height: 120%;
+    width: 35%;
+    border: solid;
+    border-color: #9e9c9c;
+    background-color: #f8f6f7;
+    color: gray ;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.optional
+{
+    border: solid; 
+    border-color: gray; 
+    color: gray; 
+    background-color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-width: 2px;
+}
+.btn
+{
+    height: 30px;
+    width: 60px;
+    margin-left: 100px;
+    margin-top: 12px;
+}
+tr
+{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
