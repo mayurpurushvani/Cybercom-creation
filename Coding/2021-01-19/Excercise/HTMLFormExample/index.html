@@ -1,17 +1,18 @@
 <html>
     <head>
         <title>Html Form Example</title>
-       
+        <script src="script.js"></script>
     </head>
    
     <link rel = "stylesheet" href="style.css"/>
 
    
     <body>
+        <form  action="view.html">
         <div class="box">
             <div class="align">
         <label>Name :</label>
-        <input type="text" class = "input" id="name" name="name"/>
+        <input type="text" class = "input" id="name" name="name"></input>
         </div>
         
         <div class="align">
@@ -26,14 +27,11 @@
 
     </div>
 
-        <input type="button" class="btn" name="submit" value = "Add" onclick="addElement();"/>
-
-        <input type="submit" class="btn" name="display" value = " view all records" onclick="display();"/>
-        <div id="Result"></div> 
+        <input type="submit" class="btn" name="submit" value = "Add" onclick="myfunction();"/>
 
     </div>
-
-    <script src="script.js"></script>
-   
+</form>
 </body>
+
+</script>
 </html>

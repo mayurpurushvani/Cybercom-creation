@@ -1,16 +1,36 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>View Records</title>
-    </head>
-    <script src="script.js"></script>
-    <script>
-        
-        import display from 'script.js';
+<head>
+	<title>View page</title>
+</head>
+<body>
+	<center>
+	<table border="1">
+		<tr>
+			<td>Name :</td>
+			<td><label id="name"></label></td>
+		</tr>
+		<tr>
+			<td>Email :</td>
+			<td><label id="email"></label></td>
+		</tr>
+		<tr>
+			<td>Date Of Birth:</td>
+			<td><label id="date"></label></td>
+		</tr>
+	</table>
+</center>
+</body>
+<script type="text/javascript">
 
-        const display = display();
+        //get value from local storage
 
-        console.log(display);
+        var name = localStorage.getItem('sname');
+        var email = localStorage.getItem('semail');
+        var bdate = localStorage.getItem('bdate');
+        document.querySelector('#name').textContent = name;
+        document.querySelector('#email').textContent = email;
+        document.querySelector('#date').textContent = bdate;
 
-    </script>
-
+</script>
 </html>
