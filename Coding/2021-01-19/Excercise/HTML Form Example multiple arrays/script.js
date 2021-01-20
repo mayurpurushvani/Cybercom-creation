@@ -1,4 +1,3 @@
-var x = 0;
 var array = [];
 
 function addElement()
@@ -12,10 +11,15 @@ function addElement()
 		birthdate : bdate
 	};
 
+	if(localStorage.getItem('array'))
+	{
+		array = JSON.parse(localStorage.getItem('array'));
+	}
+
 	array.push(person);
     console.log(array);
-    localStorage.setItem("array", JSON.stringify(array));
-	alert(sname + " " + semail + " " + bdate + " added at index " + x);
-	x++;
+	localStorage.setItem("array", JSON.stringify(array));
+	
+	alert(sname + " " + semail + " " + bdate + " added at index " + array.length);
 	
 };
