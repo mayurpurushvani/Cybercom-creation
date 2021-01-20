@@ -1,0 +1,38 @@
+.input
+{
+    margin-left: 10px;    
+    justify-content: flex-start;
+    display: flex;
+    width: 55%;
+}
+label
+{
+    width: 120px;
+    justify-content: flex-end;
+    display: flex;
+}
+.align
+{
+    display: flex;
+    padding-top: 11px;
+}
+.box
+{
+    margin-left : auto;
+    margin-right: auto;
+    height: 40%;
+    width: 35%;
+    border: solid;
+    border-color: #9e9c9c;
+    background-color: #f8f6f7;
+    color: gray ;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.btn
+{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}

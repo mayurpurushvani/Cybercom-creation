@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>View Records</title>
+    </head>
+<body>
+
+<script src="script.js"></script>
+
+	<script type="text/javascript">
+
+		var array = localStorage.getItem('array');
+		var items = JSON.parse(array);
+		var m = 0;
+		array = items;
+		
+		document.write('<table border = "1" id = "table1">');
+		document.write('<tr>');
+		document.write('<th>Name</th> <th>Email</th> <th>Date Of Birth</th> </tr> <tr>');
+					
+			if(array === null )
+			{
+				alert("Records not found!");
+				document.getElementById("table1").style.display = "none";
+				window.location.href = "index.html";
+			}			
+			else
+			{
+				for(var k = 0 ; k < array.length; k++)
+				{	
+					document.write('<td>'+ array[k].name + '</td>' );
+					document.write('<td>'+ array[k].email + '</td>' );
+					document.write('<td>'+ array[k].birthdate + '</td>' );
+					document.write('</tr>');
+				}
+			}
+			document.write('</table>');	
+	</script>
+
+</body>
+</html>
+
