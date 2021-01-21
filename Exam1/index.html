@@ -24,7 +24,7 @@
                 <a href="userSession.html">Login Session</a>
             </li>
             <li>
-                <a href="logout.html">Logout</a>
+                <a onclick="logout();">Logout</a>
             </li>
         </ul>
     </nav>
@@ -35,7 +35,7 @@
         
         <div class="box-1">
             <label class="label">User < 18 Years</label><br><br>
-            <label class="label-1" id="under12"></label>
+            <label class="label-1" id="under18"></label>
         </div>
         
         <div class="box-2">
@@ -45,7 +45,7 @@
 
         <div class="box-3">
             <label class="label">Users > 50 Years</label><br><br>
-            <label class="label-1" id="below50"></label>
+            <label class="label-1" id="above50"></label>
         </div>
 
 </div>
@@ -62,7 +62,13 @@
 
 <script>
     document.getElementById("name").innerHTML = "Hello " + sessionStorage.getItem("name");
+    age_u_18();
+    document.getElementById("under18").innerHTML = localStorage.getItem("age_under_18");
+    document.getElementById("Under50").innerHTML = localStorage.getItem("age_u_18_a_50");
+    document.getElementById("above50").innerHTML = localStorage.getItem("age_a_50");
+
 </script>
+
 
 </body>
 </html> 

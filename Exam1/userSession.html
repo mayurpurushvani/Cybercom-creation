@@ -34,7 +34,9 @@
     <h1>USers Session Logs</h1>
     
     <script type="text/javascript">
-   
+
+        var array_user = [];
+
         document.write('<table  border="1" class="table table-data2" id="table-user">');
         document.write('<thread>');
         document.write('<th>Name</th>');
@@ -44,19 +46,18 @@
         document.write('<tbody>');
         document.write('<tr>');
         
-        var array = localStorage.getItem('array');
-        var items = JSON.parse(array);
+        var array_user = localStorage.getItem('array_user');
+        var items = JSON.parse(array_user);
         
-        array = items;
+        array_user = items;
                     
         
-                for(var k = 0 ; k < array.length; k++)
+                for(var k = 0 ; k < array_user.length; k++)
                 {	
-                    document.write('<td>'+ array[k].name + '</td>' );
-                    document.write('<td>'+ array[k].logiDateTime + '</td>' );
-                    document.write('<td>'+ array[k].logoutDateTime + '</td>' );
+                    document.write('<td>'+ array_user[k].name + '</td>' );
+                    document.write('<td>'+ array_user[k].logiDateTime + '</td>' );
+                    document.write('<td>'+ array_user[k].logoutDateTime + '</td>' );
                     
-
                     document.write('</tr>');
                 }
             
