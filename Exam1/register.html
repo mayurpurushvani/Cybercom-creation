@@ -9,7 +9,7 @@
     <body>
 
 
-        <form action = "view.html">
+        <form action = "login.html">
             <div class="box-1">
                 <h1>Register</h1>
             
@@ -31,7 +31,7 @@
                 </div>
                 
             <div class="align-1">
-                <select required>
+                <select required id="city">
                     <option selected>Select City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
                     <option>Rajkot</option>
                     <option>Ahmedabad</option>
@@ -43,7 +43,7 @@
                     
                 </select required>
             </div>
-            <div class="align-1">
+            <div class="align-1" id="state"> 
                 <select>
                     <option>Select State&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
                     <option>Andhra Pradesh</option>
@@ -55,10 +55,10 @@
             </div>
               
             <div class="align-1">
-                <input type="checkbox" name="terms" id="terms" onchange="activateButton(this)"> Terms & Coditions
+                <input type="checkbox" name="terms" id="terms" onchange="document.getElementById('submit').disabled = !this.checked;"> Terms & Coditions
             </div>
 
-            <input type="submit" class="btn" name="display" value = "REGISTER"/>
+            <input type="submit" class="btn" disabled="disabled" name="submit" id="submit" value = "REGISTER" onclick="addElement();"/>
     
         </div>
         </form>
@@ -66,6 +66,8 @@
                                 
         
         </body>
+
+        <script src="script-register.js"></script>
 
 </html>
 
