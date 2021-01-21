@@ -1,5 +1,5 @@
 var array = [];
-
+var hasMatch = false;
 function checkData() {
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
@@ -9,21 +9,26 @@ function checkData() {
     }
 
     function check_user_register() {
-        for (var index = 0; index < array.length; ++index) {
+        for (var index = 0; index < array.length; index++) {
 
             var temp = array[index];
 
-            if (temp.email == email && temp.password == password) {
+            if (array[index].email == email && array[index].password == password) {
                 hasMatch = true;
-                alert("login successfull");
+                
                 break;
-            }
-            else
-            {
-                alert("Email & Password is Invalid!");
+                
             }
         }
     }
     check_user_register();
 
+    if(hasMatch == false)
+    {
+        hasMatch = false;
+        alert("Invalid email and password!")
+    }
+    else{
+        window.location.href = "index.html";
+    }
 };

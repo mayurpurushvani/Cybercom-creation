@@ -47,6 +47,10 @@ function addElement() {
                 alert("admin already exist with same email");
                 break;
             }
+            else
+            {
+                
+            }
         }
     }
     check_user_register();
@@ -54,8 +58,8 @@ function addElement() {
         array.push(admin);
         console.log(array);
         localStorage.setItem("array", JSON.stringify(array));
-        var ask = window.confirm("You are registerd successfully");
-        if (ask) {
+        var message = window.confirm("registerd successfully");
+        if (message) {
             window.location.href = "login.html";
         }
     }
