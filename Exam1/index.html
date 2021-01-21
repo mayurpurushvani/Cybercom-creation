@@ -15,18 +15,16 @@
                 <h5><label id="name">Hello, </label></h5>
             </li>
             <li>
-
                 <a href="index.html">Dashboard</a>
-               
             </li>
             <li>
                 <a href="user.html">User</a>
             </li>
             <li>
-                <a href="Login_Session.html">Login Session</a>
+                <a href="userSession.html">Login Session</a>
             </li>
             <li>
-                <a href="Logout">Logout</a>
+                <a href="logout.html">Logout</a>
             </li>
         </ul>
     </nav>
@@ -36,21 +34,35 @@
     <div class="align">
         
         <div class="box-1">
-            <label>User < 18 Years</label>
-            <label id="under12"></label>
+            <label class="label">User < 18 Years</label><br><br>
+            <label class="label-1" id="under12"></label>
         </div>
         
         <div class="box-2">
-            <label>18-50 Years Users</label>
-            <label id="Under50"></label>
+            <label class="label">18-50 Years Users</label><br><br>
+            <label class="label-1" id="Under50"></label>
         </div>
 
         <div class="box-3">
-            <label>Users > 50 Years</label>
-            <label id="below50"></label>
+            <label class="label">Users > 50 Years</label><br><br>
+            <label class="label-1" id="below50"></label>
         </div>
 
 </div>
- 
+
+
+<div class="bday-100">
+    <label class="bday">Today's is</label>
+    <label class = "bday" id="userName"></label>
+    <label class="bday"> Birthday.</label> 
+</div>
+
+
+<script src="script-user.js"></script>            
+
+<script>
+    document.getElementById("name").innerHTML = "Hello " + sessionStorage.getItem("name");
+</script>
+
 </body>
 </html> 

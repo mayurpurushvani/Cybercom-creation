@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    
+</head>
+
+<link rel="stylesheet" href="css/dashboard.css"/>
+
+<body>
+  
+    <nav>
+        <ul>
+            <li>
+                <h5><label id="name">Hello, </label></h5>
+            </li>
+            <li>
+
+                <a href="index.html">Dashboard</a>
+               
+            </li>
+            <li>
+                <a href="user.html">User</a>
+            </li>
+            <li>
+                <a href="userSession.html">Login Session</a>
+            </li>
+            <li>
+                <a onclick="logout();">Logout</a>
+            </li>
+        </ul>
+    </nav>
+    
+    <h1>USers Session Logs</h1>
+    
+    <script type="text/javascript">
+   
+        document.write('<table  border="1" class="table table-data2" id="table-user">');
+        document.write('<thread>');
+        document.write('<th>Name</th>');
+        document.write('<th>Login Date Time</th>');
+        document.write('<th>Logout Date Time</th>');
+        document.write('</thread>');
+        document.write('<tbody>');
+        document.write('<tr>');
+        
+        var array = localStorage.getItem('array');
+        var items = JSON.parse(array);
+        
+        array = items;
+                    
+        
+                for(var k = 0 ; k < array.length; k++)
+                {	
+                    document.write('<td>'+ array[k].name + '</td>' );
+                    document.write('<td>'+ array[k].logiDateTime + '</td>' );
+                    document.write('<td>'+ array[k].logoutDateTime + '</td>' );
+                    
+
+                    document.write('</tr>');
+                }
+            
+            document.write('</tbody></table>');	
+    </script>
+
+<script>
+    document.getElementById("name").innerHTML = "Hello " + sessionStorage.getItem("name");
+</script>
+
+</body>
+</html>
