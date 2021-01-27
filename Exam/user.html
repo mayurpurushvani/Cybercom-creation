@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+
+</head>
+
+<link rel="stylesheet" href="css/dashboard.css" />
+
+
+<script>
+
+    if (!sessionStorage.getItem('name')) {
+        window.location.href = "login.html";
+    }
+
+</script>
+
+<body>
+
+
+    <nav>
+        <ul>
+            <li>
+                <h5><label id="name">Hello, </label></h5>
+            </li>
+            <li>
+
+                <a href="index.html">Dashboard</a>
+
+            </li>
+            <li>
+                <a href="user.html">User</a>
+            </li>
+            <li>
+                <a href="userSession.html">Login Session</a>
+            </li>
+            <li>
+                <a onclick="logout();">Logout</a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <h1>Add User</h1>
+
+    <div class="align-input-100">
+        <input type="text" name="name" id="name1" placeholder="Name" class="input-100" />
+        <input type="text" name="email" id="email" placeholder="Email" class="input-100" />
+        <input type="password" name="password" id="password" placeholder="Password" class="input-100" />
+        <input type="date" name="birthDate" id="birthDate" placeholder="dateOfBirth" class="input-100" />
+    </div>
+    <!--
+    <input type="submit" class="add-user-btn" name="submit" value="Add User" id="submit" onclick="addUser();"  />
+-->
+    <input type="button" id="addUser" class="add-user-btn" name="login" value="Add User" onclick="addUser();" />
+
+    <!-- <input type="button" id="editUser" class="add-user-btn" name="login" value = "Update" onclick="editUser();"/>    -->
+
+    <h1>User List</h1>
+
+
+
+    <script src="script-user.js"></script>
+
+    <script type="text/javascript">
+        var m = 0;
+        var n = 0;
+        var flagy = 0;
+        var a;
+        var b;
+        document.write('<table id="table" border="1" class="table table-data2" id="table-user">');
+        document.write('<thread>');
+
+        document.write('<th>Name</th>');
+        document.write('<th>Email</th>');
+        document.write('<th>Password</th>');
+        document.write('<th>Birthdate</th>');
+        document.write('<th>Age</th>');
+        document.write('<th colspan="2">Actions</th>');
+
+        document.write('</thread>');
+        document.write('<tbody>');
+        document.write('<tr>');
+
+
+        var array_user = localStorage.getItem('array_user');
+        var items = JSON.parse(array_user);
+
+        array_user = items;
+
+        //var k = 0;
+        if (array_user) {
+            for (var k = 0; k < array_user.length; k++) {
+                document.write('<td>' + array_user[k].name + '</td>');
+                document.write('<td>' + array_user[k].email + '</td>');
+                document.write('<td>' + array_user[k].password + '</td>');
+                document.write('<td>' + array_user[k].userbirthDate + '</td>');
+                document.write('<td>' + getAge(array_user[k].userbirthDate) + '</td>');
+
+                document.write('<td><a href="#" name="aTag" id="aTag" value="' + k + '" onClick="editData(' + array_user[k].index + ')">Edit</a></td>');
+
+                document.write('<td>');
+
+
+                document.write("<a href='#' onClick='deleteData(" + array_user[k].index + ")'>Delete</a>");
+                document.write("</td>");
+
+                document.write('</tr>');
+
+                //  k++;
+            }
+        }
+        function deleteData(index) {
+            var items = localStorage.getItem('array_user');
+            var array_user = JSON.parse(items);
+            var index_of;
+
+            for (var s = 0; s < array_user.length; s++) {
+                index_of = array_user.indexOf(array_user[s]);
+                console.log(index_of);
+
+                if (index != 0) {
+                    array_user.splice(index, 1);
+                    console.log(index_of);
+                }
+                if (index == 0) {
+                    array_user.splice(index, 1);
+                }
+
+                localStorage.setItem('array_user', JSON.stringify(array_user));
+                location.reload();
+                break;
+            }
+            for (var g = 0; g < array_user.length; g++) {
+                index_of = array_user.indexOf(array_user[g]);
+                if (index_of != array_user[g].index) {
+                    array_user[g].index = index_of;
+                }
+            }
+            localStorage.setItem('array_user', JSON.stringify(array_user));
+            location.reload();
+        }
+
+        function editData(index) {
+            var array_user1 = localStorage.getItem('array_user');
+            var items = JSON.parse(array_user1);
+
+
+            let link = document.querySelector("#aTag");
+            let target1 = link.getAttribute('value');
+            link.setAttribute('value', index);
+
+            for (var j = 0; j < items.length; j++) {
+                if (index == items[j].index) {
+                    document.getElementById('name1').value = items[j].name;
+                    document.getElementById('email').value = items[j].email;
+                    document.getElementById('password').value = items[j].password;
+                    document.getElementById('birthDate').value = items[j].userbirthDate;
+                    //document.getElementById('addUser').display = "none";
+                    document.getElementById("addUser").value = "Update";
+                }
+            }
+            //return "hello "+c;
+        }
+
+        document.write('</tbody></table>');	
+    </script>
+
+    <script>
+        document.getElementById("name").innerHTML = "Hello " + sessionStorage.getItem("name");
+    </script>
+
+</body>
+<script src="script-user.js"></script>
+
+</html>

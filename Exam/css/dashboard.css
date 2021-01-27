@@ -1,0 +1,150 @@
+body 
+{
+font-family: "Lato", sans-serif;
+transition: background-color .5s;
+margin-left: 30%;
+}
+.align
+{
+    justify-content: center;
+    display: flex;
+    text-align: center;   
+}
+.box-1
+{
+    background-color: #f9cb9c;
+    min-height: 100px;
+    min-width: 220px;
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+
+}
+.box-2
+{
+    background-color: #b4a7d6;
+    min-height: 100px;
+    min-width: 220px;
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    margin-left: 100px;
+}
+.input-100
+{
+    width: 200px;
+}
+.align-input-100
+{
+    margin-top: 60px;
+    height: 50px;
+}
+.add-user-btn
+{
+    background-color: #b45f06;
+    color: white;
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    width: 150px;
+    margin-left: 73%;
+}
+.bday-100
+{
+    margin-left: 30%;
+    margin-right: auto;
+    margin-top: 100px;
+}
+.bday
+{
+    font-size: 30px;
+}
+.box-3
+{
+    background-color: #f4cccc;
+    min-height: 100px;
+    min-width: 220px;
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    margin-left: 100px;
+}
+
+.label{
+    
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    
+}
+
+.label-1{
+    padding-top: 40px;
+    text-align: center;
+    font-size: 25px;
+    color: black;
+}
+
+h5{
+padding: 8px 8px 8px 32px;
+text-decoration: none;
+font-size: 20px;
+color: #ffffff;
+display: block;
+transition: 0.3s;
+}
+
+nav {
+height: 100%;
+width: 20%;
+position: fixed;
+z-index: 1;
+top: 0;
+left: 0;
+background-color: #b45f06;
+overflow-x: hidden;
+transition: 0.5s;
+padding-top: 60px;
+}
+
+nav a {
+padding: 8px 8px 8px 32px;
+text-decoration: none;
+font-size: 25px;
+color: #ffffff;
+display: block;
+transition: 0.3s;
+}
+
+nav a:hover {
+color: gray;
+}
+
+.birthday
+{
+    margin-left: 30%;
+    text-align: center;
+    font-size: 50px;
+    color: brown;
+}
+
+
+/*USER*/
+.table {
+    margin: 0;
+}
+.table-data2 {
+    border-collapse: collapse;
+    overflow: visible;
+}
+
+.table-data2.table thead th {
+    font-size: 12px;
+    color: #555;
+    text-transform: uppercase;
+    border: none;
+    font-weight: 600;
+    vertical-align: top;
+    padding: 15px 40px;
+    padding-right: 10px;
+}

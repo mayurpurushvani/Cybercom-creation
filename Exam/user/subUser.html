@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+
+</head>
+
+<link rel="stylesheet" href="../css/dashboard.css" />
+
+
+
+<script>
+
+    if (!sessionStorage.getItem('name')) {
+        window.location.href = "user_login.html";
+    }
+
+</script>
+
+<body>
+
+    <nav>
+        <ul>
+            <li>
+                <h5><label id="name1">Hello, </label></h5>
+            </li>
+            <li>
+
+                <a href="subUser.html">Dashboard</a>
+
+            </li>
+            <li>
+                <a onclick="user_logout();">Logout</a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <h1>
+        Welcome to Cyebrcom Creation
+    </h1>
+
+    <script src="script-user-login.js"></script>
+
+    <script>
+
+        var flag1 = true;
+
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        //var yyyy = today.getFullYear();
+
+        var lmm;
+        var ldd;
+        var ddmm;
+
+        localbDay = mm + "-" + dd;
+        console.log(localbDay);
+
+        if (localStorage.getItem('array_user')) {
+            array_user = JSON.parse(localStorage.getItem('array_user'));
+        }
+
+        for (var b = 0; b < array_user.length; b++) {
+            lmm = array_user[b].userbirthDate.charAt(5) + array_user[b].userbirthDate.charAt(6);
+            ldd = array_user[b].userbirthDate.charAt(8) + array_user[b].userbirthDate.charAt(9);
+            ddmm = lmm + "-" + ldd;
+
+            if (array_user[b].name == sessionStorage.getItem("name")) {
+                console.log(array_user[b].userbirthDate)
+                if (ddmm == localbDay) {
+                    document.write("<h1 style = 'color:red; text-align:center'>Happy Birthday!</h1>");
+                }
+            }
+        }
+    </script>
+    <script>
+
+        document.getElementById("name1").innerHTML = "Hello " + sessionStorage.getItem("name");
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <title>Register Page</title>
+    <link href="css/theme.css" rel="stylesheet" media="all">
+</head>
+
+
+
+<body>
+
+
+    <form action="login.html">
+        <div class="box-1">
+            <h1>Register</h1>
+
+            <div class="align-1">
+                <input type="text" class="input" id="name" name="name" placeholder="Name" required></input>
+            </div>
+
+            <div class="align-1">
+                <input type="email" class="input" id="email" name="email" placeholder="email" required />
+            </div>
+
+
+            <div class="align-1">
+                <input type="password" class="input" id="password" name="password" placeholder="Password" required />
+            </div>
+
+            <div class="align-1">
+                <input type="password" class="input" id="confirm_password" name="confirm_password"
+                    placeholder="Confirm Password" required />
+            </div>
+
+            <div class="align-1">
+                <select required id="city">
+                    <option selected>Select
+                        City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </option>
+                    <option>Rajkot</option>
+                    <option>Ahmedabad</option>
+                    <option>Baroda</option>
+                    <option>Surat</option>
+                    <option>Bhavnagar</option>
+                    <option>Jamagar</option>
+                    <option>Gandhinagar</option>
+
+                </select required>
+            </div>
+            <div class="align-1" id="state">
+                <select>
+                    <option>Select
+                        State&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </option>
+                    <option>Andhra Pradesh</option>
+                    <option>Arunachal Pradesh</option>
+                    <option>Assam</option>
+                    <option>Bihar</option>
+                    <option>Gujarat</option>
+                </select>
+            </div>
+
+            <div class="align-1">
+                <input type="checkbox" name="terms" id="terms"
+                    onchange="document.getElementById('submit').disabled = !this.checked;"> Terms & Coditions
+            </div>
+
+            <input type="submit" class="btn" disabled="disabled" name="submit" id="submit" value="REGISTER"
+                onclick="addElement();" />
+
+        </div>
+    </form>
+
+
+
+</body>
+
+<script src="script-register.js"></script>
+
+</html>

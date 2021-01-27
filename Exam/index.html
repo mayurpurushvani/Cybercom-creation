@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+
+
+
+</head>
+
+<link rel="stylesheet" href="css/dashboard.css" />
+
+<script>
+
+    if (!sessionStorage.getItem('name')) {
+        window.location.href = "login.html";
+    }
+
+</script>
+
+
+<body>
+
+    <nav>
+        <ul>
+            <li>
+                <h5><label id="name">Hello, </label></h5>
+            </li>
+            <li>
+                <a href="index.html">Dashboard</a>
+            </li>
+            <li>
+                <a href="user.html">User</a>
+            </li>
+            <li>
+                <a href="userSession.html">Login Session</a>
+            </li>
+            <li>
+                <a onclick="logout();">Logout</a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <h1>Dashoard</h1>
+    <div class="align">
+
+        <div class="box-1">
+            <label class="label">User < 18 Years</label><br><br>
+                    <label class="label-1" id="under18"></label>
+        </div>
+
+        <div class="box-2">
+            <label class="label">18-50 Years Users</label><br><br>
+            <label class="label-1" id="Under50"></label>
+        </div>
+
+        <div class="box-3">
+            <label class="label">Users > 50 Years</label><br><br>
+            <label class="label-1" id="above50"></label>
+        </div>
+
+    </div>
+
+
+    <div class="bday-100">
+        <label class="bday">Today's is</label>
+        <label class="bday" id="1"></label>
+        <label class="bday"> Birthday.</label>
+    </div>
+
+
+    <script src="script-user.js"></script>
+
+    <script>
+
+        /*Birthy Name Get Region*/
+
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var lmm;
+        var ldd;
+        var ddmm;
+        var flag = false;
+        var birthdayNames = [];
+        localbDay = mm + "-" + dd;
+        if (localStorage.getItem('array_user')) {
+            array_user = JSON.parse(localStorage.getItem('array_user'));
+        }
+
+        setvalue();
+        function setvalue() {
+            for (var b = 0; b < array_user.length; b++) {
+                lmm = array_user[b].userbirthDate.charAt(5) + array_user[b].userbirthDate.charAt(6);
+                ldd = array_user[b].userbirthDate.charAt(8) + array_user[b].userbirthDate.charAt(9);
+                ddmm = lmm + "-" + ldd;
+
+                if (ddmm == localbDay) {
+
+                    flag = true;
+                    var bdayusername;
+                    let oldUserName;
+                    birthdayNames.push(array_user[b].name);
+                    console.log(birthdayNames);
+                    localStorage.setItem("birthdayNames", JSON.stringify(birthdayNames));
+                }
+                console.log(array_user[b].name);
+            }
+        }
+
+        if (localStorage.getItem('birthdayNames')) {
+            data = JSON.parse(localStorage.getItem('birthdayNames'));
+        }
+        var id = document.getElementById("1");
+        id.innerText = data;
+
+
+
+        /*End region*/
+
+
+        document.getElementById("name").innerHTML = "Hello, " + sessionStorage.getItem("name");
+        age_u_18();
+        document.getElementById("under18").innerHTML = localStorage.getItem("age_under_18");
+        document.getElementById("Under50").innerHTML = localStorage.getItem("age_u_18_a_50");
+        document.getElementById("above50").innerHTML = localStorage.getItem("age_a_50");
+
+        if (localStorage.getItem('array_user')) {
+            array_user2 = JSON.parse(localStorage.getItem('array_user'));
+        }
+
+    </script>
+
+</body>
+
+</html>

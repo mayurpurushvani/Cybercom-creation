@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+
+</head>
+
+<link rel="stylesheet" href="css/dashboard.css" />
+
+<script>
+
+    if (!sessionStorage.getItem('name')) {
+        window.location.href = "login.html";
+    }
+
+</script>
+
+<body>
+
+    <nav>
+        <ul>
+            <li>
+                <h5><label id="name">Hello, </label></h5>
+            </li>
+            <li>
+
+                <a href="index.html">Dashboard</a>
+
+            </li>
+            <li>
+                <a href="user.html">User</a>
+            </li>
+            <li>
+                <a href="userSession.html">Login Session</a>
+            </li>
+            <li>
+                <a onclick="logout();">Logout</a>
+            </li>
+        </ul>
+    </nav>
+
+    <h1>USers Session Logs</h1>
+
+    <script type="text/javascript">
+
+        var array_user = [];
+        var arr_user1 = [];
+        var userNameFromarray;
+
+        document.write('<table  border="1" width="70%" class="table table-data2" id="table-user">');
+        document.write('<thread>');
+        document.write('<th>Name</th>');
+        document.write('<th>Login Date Time</th>');
+        document.write('<th>Logout Date Time</th>');
+        document.write('</thread>');
+
+        document.write('<tr>');
+
+        var array_user = localStorage.getItem('array_user');
+        var items = JSON.parse(array_user);
+
+        var login = localStorage.getItem('session_array');
+        var logindata = JSON.parse(login);
+
+        var logout = localStorage.getItem('logout_session_array');
+        var logoutdata = JSON.parse(logout);
+
+        var session_name = sessionStorage.getItem('name');
+
+        array_user1 = localStorage.getItem('array_user');
+        array_user2 = JSON.parse(array_user1);
+
+        array_user = items;
+
+        for (var s = 0; s < array_user2.length; s++) {
+            console.log(array_user2[s].name);
+            userNameFromarray = array_user2[s].name;
+
+            document.write('<td>' + array_user2[s].name + '</td>');
+
+            document.write('<td>');
+            for (var f = 0; f < logindata.length; f++) {
+
+                if (userNameFromarray == logindata[f].name) {
+                    var logindatafinal = logindata[f].loginDateTime;
+                    document.write(logindatafinal + '<br><hr>');
+                }
+            }
+            document.write('</td>');
+
+            document.write('<td>');
+            for (var c = 0; c < logoutdata.length; c++) {
+                if (userNameFromarray == logoutdata[c].name) {
+                    var logoutdatafinal = logoutdata[c].logoutdatetime;
+                    document.write(logoutdatafinal + '<br><hr>');
+                }
+            }
+            document.write('</td>');
+            document.write('</tr>');
+        }
+
+
+
+        document.write('</table>');	
+    </script>
+
+    <script>
+        document.getElementById("name").innerHTML = "Hello " + sessionStorage.getItem("name");
+
+    </script>
+
+</body>
+
+<script src="script-user.js"></script>
+
+</html>
