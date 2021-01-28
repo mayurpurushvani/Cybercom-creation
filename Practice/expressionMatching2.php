@@ -9,7 +9,6 @@ function has_space($string){
     }
 }
 
-
 $string = "Thisismayurformcybercomcreation!";
 
 if(has_space($string)){
