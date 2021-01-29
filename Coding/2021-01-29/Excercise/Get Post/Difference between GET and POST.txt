@@ -1,0 +1,14 @@
+POST - Values not visible in the URL	
+GET - Values visible in the URL
+
+POST - Has not limitation of the length of the values since they are submitted via the body of HTTP	
+GET - Has limitation on the length of the values usually 255 characters. This is because the values are displayed in the URL. Note the upper limit of the characters is dependent on the browser.
+
+POST - Has lower performance compared to Php_GET method due to time spent encapsulation the Php_POST values in the HTTP body	
+GET -Has high performance compared to POST method dues to the simple nature of appending the values in the URL.
+
+POST - Supports many different data types such as string, numeric, binary etc.	
+GET - Supports only string data types because the values are displayed in the URL
+
+POST - Results cannot be book marked	
+GET - Results can be book marked due to the visibility of the values in the URL
