@@ -1,0 +1,19 @@
+form
+{
+    background-color: #00ff66;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.background
+{
+    background-color: #ccff99;
+    width: 100%;
+    height: 100%;
+}
+fieldset
+{
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+}

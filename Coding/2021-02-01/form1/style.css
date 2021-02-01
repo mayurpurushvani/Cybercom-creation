@@ -1,0 +1,47 @@
+td
+{
+    background-color: #00ccff;
+}
+th.heading
+{
+    color: red;
+}
+th
+{
+    background-color: #ffffaa;
+}
+input
+{
+    background-color: #ccffcc;
+}
+table
+{
+    width: 40%;
+    font-size: large;
+    
+}
+.file
+{
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+.btn
+{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+input[type="submit"]
+{
+    width: 30%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}   
+input[type="reset"]
+{
+    width: 30%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
