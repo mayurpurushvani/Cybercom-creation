@@ -1,0 +1,52 @@
+.td
+{
+    background-color: #00ff66;
+}
+th
+{
+    background-color: #ccff99;
+}
+.table
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    font-size: large;
+    text-align: center;
+    margin-top: 30px;   
+}
+form
+{
+    margin-top: 50px;
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.background
+{
+    background-color: #ccff99;
+    width: 53%;
+    height: 65%;
+    margin-left: auto;
+    margin-right: auto;
+}
+fieldset
+{
+    background-color: #00ff66;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+legend
+{
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+td
+{
+    padding-left: 10px;
+    padding-top: 10px;
+}
+i
+{
+    font-size: 5px;
+    padding-right: 10px;
+}

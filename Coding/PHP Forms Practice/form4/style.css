@@ -1,0 +1,118 @@
+
+.label-100
+{
+    text-align: center;
+    margin-top: 10px;
+}
+.heading
+{
+    font-weight: 1000;
+    text-indent: 150px;
+    font-size: xx-large;
+    background-color: #e77632;
+    padding-bottom: 12px;
+    color: white;
+    text-align: center;
+    display: flex;
+}
+.input
+{
+    color: #cf9776;
+    width: 80%;
+    margin-left: 10%;
+    height: 8%;
+    margin-top: 30px;
+    border: #fffced;
+    background-color: #fffced;
+}
+::placeholder 
+{
+    padding-left: 20px;
+    color: #ce9a77;
+    font-size:medium;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    opacity: 1;
+}
+textarea::placeholder
+{
+    padding-left: 20px;
+    color: #ce9a77;
+    font-size:larger;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    opacity: 1;
+}
+textarea
+{
+    resize: none;
+    color: #cf9776;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 30px;
+    border: #fffced;
+    background-color: #fffced;
+}
+.box
+{
+    margin-top: 30px;
+    margin-left : 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    background-color: #fbefbf;
+    color: #d5c019;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container
+{
+    margin-right: auto;
+
+    margin-left: auto;
+    height: 85%;
+    background-image: linear-gradient(#a39ca3, #42251f);
+    width: 33%;
+    border-top:  1px solid black;
+    border-left: 1px solid black;
+    border-width: 10px;
+
+}
+.sub
+{
+    font-size: xx-large;
+    background-color: #f8cc37;
+    color: #563317;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    width: 426px;
+    border-color: #f8cc37;
+}
+
+.message
+{
+    padding-top: 20px;
+    margin-top: 30px;
+    text-indent: 130px;
+    font-size: x-large;
+    padding-bottom: 20px;
+    text-align: center;
+    display: flex; 
+    font-weight: 1000;
+    background-color: #f8cc37;
+    color: #563317;
+}
+td
+{
+    background-color: #f8cc37;
+}
+th
+{
+    background-color: #e77632;
+}
+table
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    font-size: large;
+}
