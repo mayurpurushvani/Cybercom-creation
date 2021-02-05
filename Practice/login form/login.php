@@ -1,6 +1,6 @@
 <?php
 
-require('core.php');
+
 require('connect.php');
 
 if (isset($_POST['username']) && isset($_POST['password']))
@@ -47,3 +47,4 @@ if (isset($_POST['username']) && isset($_POST['password']))
 UserName :<input type = "text" name="username"><br>
 Password : <input type="text" name="password"><br>
 <input type="submit" name="submit" value="Sign In">
+<a href="register.php" >Register</a>

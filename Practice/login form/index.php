@@ -3,8 +3,10 @@
 require 'core.php';
 require 'connect.php';
 
-if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) {
-    echo 'You\'re logged in';
+if(loggedin()) {
+    $firstname = getuserfield('firstname');
+    $surname = getuserfield('surname');
+    echo 'You\'re logged in.'.$firstname.' '.$surname.'. <a href="logout.php">Log out</a><br>';
 }
 else {
     include 'login.php';
