@@ -1,0 +1,216 @@
+/* INDEX CSS REGION */
+
+/*****************/
+.error {
+    color: red;
+}
+.message{
+    float: right;
+    margin-right: 40px;
+    font-size: x-large;
+    color: gray;
+}
+.header-desktop {
+    background: #426ba4;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 75px;
+}
+
+.title {
+    color: #c0c0c0;
+    font-size: xx-large;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.home {
+    position: fixed;
+    top: 0;
+    margin-top: 20px;
+    right: 0;
+}
+
+button {
+    border-style: none;
+    border-color: #426ba4;
+    background-color: #426ba4;
+    color: #c0c0c0;
+    font-size: x-large;
+}
+
+hr {
+    color: gray;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+h1, h2, h3 {
+    color: gray;
+    padding-left: 40px;
+}
+
+.main-content {
+    padding-top: 90px;
+    min-height: 100vh;
+}
+
+input[type="submit"] {
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 40px;
+    background-color: #44b679;
+    font-size: x-large;
+    color: white;
+    border-color: #44b679;
+    border-style: none;
+}
+
+.table {
+    border-collapse: collapse;
+    text-align: left;
+    margin: 40px;
+    width: 94%;
+    border-style: none;
+    border-color: gray;
+    font-size: x-large;
+}
+
+.thead {
+    background-color: silver;
+    color: gray;
+}
+
+#tr {
+    border: solid;
+    border-width: 1px 0;
+}
+
+.tr>td {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.pagination {
+    margin-right: 40px;
+    float: right;
+    display: inline-block;
+}
+
+.pagination a {
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid black;
+}
+
+.pagination a.active {
+    background-color: #44b679;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: silver;
+    color: white;
+}
+input, button {
+    height: 34px;
+}
+
+/* INDEX CSS REGION */
+
+/*****************/
+
+/* ADD CONTACT CSS REGION*/
+
+/****************/
+
+input[type="text"] {
+    font-size: large;
+    color: gray;
+    height: 35px;
+    width: 90%;
+}
+
+input[type="number"] {
+    font-size: large;
+    color: gray;
+    height: 35px;
+    width: 90%;
+}
+
+input[type="email"] {
+    font-size: large;
+    color: gray;
+    height: 35px;
+    width: 90%;
+}
+
+input[type="datetime"] {
+    font-size: large;
+    color: gray;
+    height: 35px;
+    width: 90%;
+}
+
+input[type="datetime-local"] {
+    font-size: large;
+    color: gray;
+    height: 35px;
+    width: 90%;
+}
+
+.table-1 {
+    margin: 40px;
+    width: 94%;
+    border-style: none;
+    border-color: white;
+    font-size: x-large;
+    text-align: left;
+}
+
+.table-1 td {
+    padding: 15px 15px 15px 0px;
+}
+
+.thead-1 {
+    background-color: white;
+    color: gray;
+}
+
+td {
+    color: gray;
+}
+
+.alignment {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/* ADD CONTACT CSS REGION OVER*/
+
+/****************/
+
+/* DELETE UPDATE CSS REGION*/
+
+/****************/
+
+.item-delete {
+    background-color: red;
+    color: white;
+}
+
+.item-update {
+    background-color: #44b679;
+    color: white;
+}
+
+/* DELETE UPDATE CSS REGION OVER*/
+
+/****************/
