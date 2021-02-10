@@ -1,0 +1,367 @@
+/* INDEX CSS REGION */
+
+/*****************/
+.error {
+    color: red;
+}
+.message{
+    float: right;
+    margin-right: 40px;
+    font-size: x-large;
+    color: gray;
+}
+
+.title {
+    color: #c0c0c0;
+    font-size: xx-large;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.home {
+    position: fixed;
+    top: 0;
+    margin-top: 20px;
+    right: 0;
+}
+
+button {
+    border-style: none;
+    border-color: #426ba4;
+    background-color: #426ba4;
+    color: #c0c0c0;
+    font-size: x-large;
+}
+
+hr {
+    color: gray;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+h1, h2, h3 {
+    color: gray;
+    padding-left: 40px;
+}
+
+.main-content {
+    padding-top: 90px;
+    min-height: 100vh;
+}
+
+.table {
+    border-collapse: collapse;
+    text-align: left;
+    margin: 40px;
+    width: 94%;
+    border-style: none;
+    border-color: gray;
+    font-size: x-large;
+}
+
+.thead {
+    border: solid;
+    color: gray;
+}
+
+#tr {
+    border: solid;
+    border-width: 1px 0;
+}
+
+.tr>td {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.pagination {
+    margin-right: 40px;
+    
+    display: inline-block;
+}
+
+.pagination a {
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid black;
+}
+
+.pagination a.active {
+    background-color: #44b679;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: silver;
+    color: white;
+}
+input, button {
+    height: 34px;
+}
+.btn-100{
+    margin-left: 40px;
+    color: black;
+    background-color: #b6d7a8;
+    border: none;
+    border-radius: 5px;
+    font-size: large;
+}
+.btn-101
+{
+    font-size: large;
+    background-color: #b6d7a8;
+    border: none;
+    color: black;
+    border-radius: 5px;
+    float: right;
+    margin-right: 40px;
+    margin-top: 40px;
+}
+/* INDEX CSS REGION */
+
+/*****************/
+
+/* ADD CONTACT CSS REGION*/
+
+/****************/
+
+input[type="text"] {
+    font-size: large;
+    color: gray;
+    height: 35px;
+    width: 90%;
+}
+
+input[type="number"] {
+    font-size: large;
+    color: gray;
+    height: 35px;
+    width: 90%;
+}
+
+input[type="email"] {
+    font-size: large;
+    color: gray;
+    height: 35px;
+    width: 90%;
+}
+
+input[type="datetime"] {
+    font-size: large;
+    color: gray;
+    height: 35px;
+    width: 90%;
+}
+
+input[type="datetime-local"] {
+    font-size: large;
+    color: gray;
+    height: 35px;
+    width: 90%;
+}
+
+.table-1 {
+    margin: 40px;
+    width: 94%;
+    border-style: none;
+    border-color: white;
+    font-size: x-large;
+    text-align: left;
+}
+
+.table-1 td {
+    padding: 15px 15px 15px 0px;
+}
+
+.thead-1 {
+    background-color: white;
+    color: gray;
+}
+
+td {
+    color: gray;
+}
+
+.alignment {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/* ADD CONTACT CSS REGION OVER*/
+
+/****************/
+
+/* DELETE UPDATE CSS REGION*/
+
+/****************/
+
+.item-delete {
+    background-color: red;
+    color: white;
+}
+
+.item-update {
+    background-color: #44b679;
+    color: white;
+}
+
+/* DELETE UPDATE CSS REGION OVER*/
+
+/****************/
+
+/* LOGIN REGISTER CSS REGION*/
+
+/****************/
+
+.login
+{
+    border: solid;
+    width: auto;
+    right: 400;
+    left: 400;
+    position: fixed;
+}
+.login > label{
+    font-size: x-large;
+    margin-left: 100px;
+}
+
+.login > h1
+{
+    margin-left: 200px;
+    margin-right: auto;
+}
+.login > input[type="email"]
+{
+    margin-left: 100px;
+    width: 70%;
+}
+
+.login > input[type="password"]
+{
+    margin-left: 100px;
+    width: 70%;
+}
+.sub {
+    margin-left: 180px;   
+    margin-bottom: 20px;
+    width: 200px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: large;
+    background-color: blue;
+    color: black;
+    
+}
+
+.sub-100 {
+    margin-left: 250px;   
+    margin-bottom: 20px;
+    width: 200px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: large;
+    background-color: blue;
+    color: black;
+    
+}
+.login > .btn
+{
+    width: 20%;
+}
+
+.register
+{
+    border: solid;
+    width: auto;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+.label{
+    font-size: x-large;
+    margin-left: 100px;
+    color: gray;
+}
+.label-chk
+{
+    font-size: x-large;
+    color: gray;
+}
+
+.register > h1
+{
+    margin-left: 200px;
+    margin-right: auto;
+}
+.register > input[type="email"]
+{
+    margin-left: 100px;
+    width: 70%;
+}
+
+.register > input[type="tel"]
+{
+    margin-left: 100px;
+    width: 70%;
+}
+
+.register > textarea
+{
+    margin-left: 100px;
+    width: 70%;
+}
+
+.register > input[type="checkbox"]
+{
+    margin-left: 100px;
+    width: 3%;
+}
+.register > select
+{
+    margin-left: 100px;
+    margin-top: 20px;
+    width: 200px;
+    height: 35px;
+    font-size: large;
+    color: gray;
+}
+.register > input[type="file"]
+{
+    
+    margin-left: 200px;
+    margin-top: 20px;
+    width: 200px;
+    height: 35px;
+    font-size: large;
+    color: gray;
+}
+
+.register > input[type="datetime-local"]
+{
+    margin-left: 70px;
+    margin-top: 20px;
+    width: 200px;
+    height: 35px;
+    font-size: large;
+    color: gray;
+}
+.register > input[type="password"]
+{
+    margin-left: 100px;
+    width: 70%;
+}
+
+.register > input[type="text"]
+{
+    margin-left: 100px;
+    width: 70%;
+}
+/* LOGIN REGISTER CSS REGION*/
+
+/****************/
