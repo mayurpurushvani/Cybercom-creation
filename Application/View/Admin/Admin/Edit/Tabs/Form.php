@@ -1,7 +1,7 @@
 <?php
 $admin = $this->getTableRow();
 ?>
-<form method="post" id="adminForm" action="<?php echo $this->getUrl()->getUrl('save', 'Admin' ,null, false); ?>">
+<form method="post" id="adminForm" action="<?php echo $this->getUrl()->getUrl('save', 'Admin\Admin' ,null, false); ?>">
 
     <div class="col-lg-6">
         <div class="card">

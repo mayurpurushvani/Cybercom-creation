@@ -5,5 +5,4 @@
         </div>
     </div>
 </div>
-</aside>
 <script src="https://kit.fontawesome.com/5e9083c057.js" crossorigin="anonymous"></script>

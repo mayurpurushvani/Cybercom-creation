@@ -2,6 +2,8 @@
 
 namespace Block\Core\Layout;
 
+use Mage;
+
 \mage::getBlock('Block\Core\Template');
 class Content extends \Block\Core\Template
 {

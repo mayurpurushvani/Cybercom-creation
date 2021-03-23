@@ -7,7 +7,7 @@ $shipping = $this->getShippingAddress();
 
 ?>
 
-<form method="post" id="customerAddressForm" action="<?php echo $this->getUrl()->getUrl('save', 'Customer\CustomerAddress'); ?>">
+<form method="post" id="customerAddressForm" action="<?php echo $this->getUrl()->getUrl('save', 'Admin\Customer\CustomerAddress'); ?>">
 
     <div class="col-lg-6">
         <div class="card">
@@ -19,7 +19,7 @@ $shipping = $this->getShippingAddress();
                 <div class="form-group">
                     <label class="form-control-label">Address id:</label>
                     <?php if ($address->addressId) { ?>
-                        <input type="hidden" name="billing[addressId]" value=" <?php   if ($address) { echo $address->addressId; } ?>">
+                        <input type="hidden" name="billingId" value=" <?php   if ($address) { echo $address->addressId; } ?>">
                     <?php } ?>
                     <input type="text" name="billing[addressId]" disabled="disabled" value="<?php if ($address) {
                                                                                                 echo $address->addressId;
@@ -77,7 +77,7 @@ $shipping = $this->getShippingAddress();
                 <div class="form-group">
                     <label class="form-control-label">Address id:</label>
                     <?php if ($shipping) { ?>
-                        <input type="hidden" name="shipping[addressId]" value=" <?php  if ($shipping) { echo $shipping->addressId;  }?>">
+                        <input type="hidden" name="shippingId" value=" <?php  if ($shipping) { echo $shipping->addressId;  }?>">
                     <?php } ?>
                     <input type="text" name="shipping[addressId]" disabled="disabled" value="<?php if ($shipping) {
                                                                                                     echo $shipping->addressId;

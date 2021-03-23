@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <h3 class='title-5 m-b-35'>Attribute</h3>
 
-        <a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('form', 'Attribute', [], true) ?>').resetParams().load(); " class="btn btn-outline-primary btn-sm">Add Attribute</a>
+        <a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('form', 'Admin\Attribute', [], true) ?>').resetParams().load(); " class="btn btn-outline-primary btn-sm">Add Attribute</a>
 
 
         <div class="table-responsive table-responsive-data2">
@@ -41,8 +41,8 @@
                                 echo '<td>' . $attribute->backendModel . '</td>';
 
                         ?>
-                                <td><a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('form', 'Attribute', ['editId' =>  $attribute->attributeId]) ?>').resetParams().load(); " class="btn btn-success btn-sm">Edit</a>&nbsp
-                                    <a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('delete', 'Attribute', ['deleteId' =>  $attribute->attributeId]) ?>').resetParams().load(); " class="btn btn-danger btn-sm">Delete</a>
+                                <td><a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('form', 'Admin\Attribute', ['editId' =>  $attribute->attributeId]) ?>').resetParams().load(); " class="btn btn-success btn-sm">Edit</a>&nbsp
+                                    <a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('delete', 'Admin\Attribute', ['deleteId' =>  $attribute->attributeId]) ?>').resetParams().load(); " class="btn btn-danger btn-sm">Delete</a>
                                 </td>
 
                         <?php

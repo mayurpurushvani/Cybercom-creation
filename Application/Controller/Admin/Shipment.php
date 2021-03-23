@@ -87,7 +87,7 @@ class Shipment extends \Controller\Core\Admin
         } catch (\Exception $e) {
             $this->getMessage()->setFailure($e->getMessage());
         }
-        $this->gridHtmlAction();
+        $this->redirect('gridHtml', null, ['page'=>1], true );
     }
     public function deleteAction()
     {

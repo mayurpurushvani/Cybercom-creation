@@ -6,7 +6,7 @@
 
         <button type="button" class="btn btn-outline-primary btn-sm" onclick="object.resetParams().setForm('#mediaUpdateForm').load();" id="btn_delete">Remove</button>
 
-        <form method="post" id="mediaUpdateForm" action="<?php echo $this->getUrl()->getUrl('update', 'Product\Media'); ?>">
+        <form method="post" id="mediaUpdateForm" action="<?php echo $this->getUrl()->getUrl('update', 'Admin\Product\Media'); ?>">
 
             <button style="margin-top: 20px;" type="button" onclick="object.resetParams().setForm('#mediaUpdateForm').load();" name="btn_update" class="btn btn-outline-primary btn-sm">Update</button>
 
@@ -43,7 +43,7 @@
                                         <?php echo '<td><img src="' . $value->image . '"></img></td>';
 
                                         ?>
-                                        <td><input type="text" style="background-color: #c5c5c5;" name="img[data][<?php echo $value->mediaId; ?>][label]" value="<?php echo $value->label; ?>"></td>
+                                        <td><input type="text" class="form-control" style="background-color: #c5c5c5;" name="img[data][<?php echo $value->mediaId; ?>][label]" value="<?php echo $value->label; ?>"></td>
 
                                         <td><input type="radio" name="img[thumb]" value="<?php echo $value->mediaId; ?>" <?php if ($value->thumb == 1) {
                                                                                                                                 echo "checked";
@@ -72,9 +72,9 @@
     </div>
 </div>
 
-<form method="post" id="imageUploadForm" action="<?php echo $this->getUrl()->getUrl('add', 'Product\Media'); ?>" enctype="multipart/form-data">
+<form method="post" id="imageUploadForm" action="<?php echo $this->getUrl()->getUrl('add', 'Admin\Product\Media'); ?>" enctype="multipart/form-data">
 
-    <input type="file" name="image" id="file" required>
+    <input type="file" name="image" id="file" style="margin-top: 20px;" required>
 
     <button type="button" id="btn_upload" class="btn btn-primary">Upload</button>
 
@@ -87,7 +87,7 @@
     $(document).ready(function() {
 
         $("#btn_upload").click(function() {
-            object.setUrl('<?php echo $this->getUrl()->getUrl("add", "Product\Media"); ?>');
+            object.setUrl('<?php echo $this->getUrl()->getUrl("add", "Admin\Product\Media"); ?>');
             var fd = new FormData();
             var files = $('#file')[0].files;
 
@@ -125,7 +125,7 @@
                     alert("Please Select atleast one checkbox");
                 } else {
                     $.ajax({
-                        url: 'http://localhost/cybercom-creation/Advance%20PHP%20&%20MVC/Application/index.php?c=Product\\Media&a=delete',
+                        url: 'http://localhost/cybercom-creation/Advance%20PHP%20&%20MVC/Application/index.php?c=Admin\\Product\\Media&a=delete',
                         method: 'POST',
                         data: {
                             id: id

@@ -95,7 +95,7 @@ class Category extends \Controller\Core\Admin
         $category->updateChildrenPathIds($categoryPathId);
 
         //REDIRECTION
-        $this->gridHtmlAction();
+        $this->redirect('gridHtml', null, ['page'=>1], true );
     }
 
 

@@ -8,7 +8,6 @@ class Dashboard extends \Controller\Core\Admin
     public function indexAction()
     {
         $form = \Mage::getBlock('Block\Admin\Dashboard\Index');
-        // $form->setController($this);
         $layout = $this->getLayout();
         $content = $layout->getChild('content');
         $content->addChild($form, 'form');

@@ -14,9 +14,9 @@ class Layout extends \Block\Core\Layout
     }
     public function prepareChildren()
     {
-        $this->addChild(\Mage::getBlock('Block\Core\Layout\Content'), 'content');
-        $this->addChild(\Mage::getBlock('Block\Core\Layout\Header'), 'header');
-        $this->addChild(\Mage::getBlock('Block\Core\Layout\Left'), 'left');
-        $this->addChild(\Mage::getBlock('Block\Core\Layout\Footer'), 'footer');
+        $this->addChild(\Mage::getBlock('Block\Customer\Layout\Content'), 'content');
+        $this->addChild(\Mage::getBlock('Block\Customer\Layout\Header'), 'header');
+        $this->addChild(\Mage::getBlock('Block\Customer\Layout\Left'), 'left');
+        $this->addChild(\Mage::getBlock('Block\Customer\Layout\Footer'), 'footer');
     }
 }

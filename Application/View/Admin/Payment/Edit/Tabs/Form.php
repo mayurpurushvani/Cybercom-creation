@@ -1,7 +1,7 @@
 <?php
 $payment = $this->getTableRow();
 ?>
-<form method="post" id="paymentForm" action="<?php echo $this->getUrl()->getUrl('save', 'Payment'); ?>">
+<form method="post" id="paymentForm" action="<?php echo $this->getUrl()->getUrl('save', 'Admin\Payment'); ?>">
     <div class="col-lg-6">
         <div class="card">
             <div class="card-header">

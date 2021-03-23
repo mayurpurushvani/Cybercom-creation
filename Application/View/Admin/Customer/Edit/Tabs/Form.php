@@ -6,7 +6,7 @@ $customerGroup = $this->getGroupOptions();
 
 ?>
 
-<form method="post" id="customerForm" action="<?php echo $this->getUrl()->getUrl('save', 'Customer'); ?>">
+<form method="post" id="customerForm" action="<?php echo $this->getUrl()->getUrl('save', 'Admin\Customer'); ?>">
     <div class="col-lg-6">
         <div class="card">
             <div class="card-header">

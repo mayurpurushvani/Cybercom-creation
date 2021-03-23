@@ -20,7 +20,7 @@ class Admin extends \Controller\Core\Abstracts
         $this->setMessage();
         $this->setLayout();
     }
-    
+
     public function setMessage()
     {
         $this->message = \Mage::getModel('Model\Admin\Message');

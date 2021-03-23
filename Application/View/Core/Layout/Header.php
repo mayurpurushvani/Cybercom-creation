@@ -2,8 +2,10 @@
 
 <html lang="en">
 
+
 <head>
 
+    <title>Admin Site</title>
     <!-- Bootstrap CSS-->
     <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
     <!-- Main CSS-->
@@ -39,25 +41,27 @@
                     <div class="account-wrap">
                         <div class="account-item clearfix js-item-menu">
                             <div class="topnav">
-                                <a href="http://localhost/cybercom-creation/Advance%20PHP%20&%20MVC/Application/index.php?c=dashboard&a=index">Dashboard</a>
+                                <a href="http://localhost/cybercom-creation/Advance%20PHP%20&%20MVC/Application/index.php?c=admin\dashboard&a=index">Dashboard</a>
 
-                                <a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('gridHtml', 'admin') ?>').resetParams().load(); ">Admin</a>
+                                <a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('gridHtml', 'admin\admin', ['page' => 1]) ?>').resetParams().load(); ">Admin</a>
 
-                                <a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('gridHtml', 'attribute') ?>').resetParams().load(); ">Attribute</a>
+                                <a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('gridHtml', 'admin\attribute', ['page' => 1]) ?>').resetParams().load(); ">Attribute</a>
 
-                                <a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('gridHtml', 'CMS') ?>').resetParams().load(); ">CMS Page</a>
+                                <a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('gridHtml', 'admin\brand', ['page' => 1]) ?>').resetParams().load(); ">Brand</a>
 
-                                <a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('gridHtml', 'customer') ?>').resetParams().load(); ">Customer</a>
+                                <a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('gridHtml', 'admin\CMS', ['page' => 1]) ?>').resetParams().load(); ">CMS Page</a>
 
-                                <a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('gridHtml', 'customerGroup') ?>').resetParams().load(); ">Customer Group</a>
+                                <a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('gridHtml', 'admin\customer', ['page' => 1]) ?>').resetParams().load(); ">Customer</a>
 
-                                <a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('gridHtml', 'Category') ?>').resetParams().load(); ">Category</a>
+                                <a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('gridHtml', 'admin\customerGroup', ['page' => 1]) ?>').resetParams().load(); ">Customer Group</a>
 
-                                <a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('gridHtml', 'Product') ?>').resetParams().load(); ">Product</a>
+                                <a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('gridHtml', 'admin\Category', ['page' => 1]) ?>').resetParams().load(); ">Category</a>
 
-                                <a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('gridHtml', 'Payment') ?>').resetParams().load(); ">Payment</a>
+                                <a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('gridHtml', 'admin\Product', ['page' => 1]) ?>').resetParams().load(); ">Product</a>
 
-                                <a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('gridHtml', 'Shipment') ?>').resetParams().load(); ">Shipment</a>
+                                <a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('gridHtml', 'admin\Payment', ['page' => 1]) ?>').resetParams().load(); ">Payment</a>
+
+                                <a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('gridHtml', 'admin\Shipment', ['page' => 1]) ?>').resetParams().load(); ">Shipment</a>
                             </div>
                         </div>
                     </div>

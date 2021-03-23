@@ -57,28 +57,25 @@ class Adapter
             }
         }
     }
-    public function fetchAll($query)
+    public function fetchOne($query)
     {
-
-        $this->$query = $query;
-        if ($this->isConnected() == false) {
-            echo 'Connection failed!';
-        } else {
-            $result = mysqli_query($this->getConnect(), $query);
-
-            $row = mysqli_fetch_all($result, MYSQLI_ASSOC);  //fetch_all - Return all the rows   
-            return $row;
-            // if (!$row) {
-            // } else {
-            // foreach ($row as $key => $value) {
-            // $categoryValue = $value;
-            // $categoryKey = $key;
-            // $final[$categoryKey] = $categoryValue;
-            // }
-            // return $final;
-            // }
+        if(!$this->isConnected()){
+            $this->connection();
         }
+        $result = $this->getConnect()->query($query);
+        return $result->num_rows;
     }
+    public function fetchAll($query) {
+		if(!$this->isConnected()){
+			$this->connection();
+		}
+		if (! $data = $this->connect->query($query)) {
+			return false;
+		}
+		if ($result = $data->fetch_all(MYSQLI_ASSOC)) {
+			return $result;
+		}		
+	}
     public function fetchPairs($query)
     {
 

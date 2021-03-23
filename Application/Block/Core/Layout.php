@@ -6,6 +6,7 @@ namespace Block\Core;
 \Mage::getBlock('Block\Core\Layout\Header');
 \Mage::getBlock('Block\Core\Layout\Left');
 \Mage::getBlock('Block\Core\Layout\Footer');
+\Mage::getBlock('Block\Core\Template');
 
 class Layout extends \Block\Core\Template
 {

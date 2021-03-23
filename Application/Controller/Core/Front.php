@@ -20,15 +20,7 @@ class Front
     }
     public static function prepareClassName($key, $namespace)
     {
-        $className = $namespace . "\Admin\\" . $key;
-        $className = str_replace("\\", " ", $className);
-        $className = ucwords($className);
-        $className = str_replace(" ", " ", $className);
-        return $className;
-    }
-    public static function prepareCustomerClassName($key, $namespace)
-    {
-        $className = $namespace . "\Home\\" . $key;
+        $className = $namespace . " " . $key;
         $className = str_replace("\\", " ", $className);
         $className = ucwords($className);
         $className = str_replace(" ", " ", $className);

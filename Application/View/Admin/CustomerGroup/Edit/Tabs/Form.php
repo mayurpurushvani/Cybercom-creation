@@ -3,7 +3,7 @@ $customerGroup = $this->getTableRow();
 
 ?>
 
-<form method="post" id="customerGroupForm" action="<?php echo $this->getUrl()->getUrl('save', 'customerGroup'); ?>">
+<form method="post" id="customerGroupForm" action="<?php echo $this->getUrl()->getUrl('save', 'Admin\customerGroup'); ?>">
     <div class="col-lg-6">
         <div class="card">
             <div class="card-header">
@@ -24,11 +24,14 @@ $customerGroup = $this->getTableRow();
             </div>
             <div class="card-body card-block">
                 <div class="form-group">
-                    <label class="form-control-label">Default [0/1]:</label>
-                    <input type="text" name="customerGroup[default]" value="<?php echo $customerGroup->default; ?>" class="form-control">
+                    <label class="form-control-label">Status:</label>
+                    <select name="customerGroup[status]">
+                        <?php foreach ($customerGroup->getStatusOptions() as $key => $value) { ?>
+                            <option value="<?php echo $key ?>" <?php if ($customerGroup->status == $key) { ?> selected <?php } ?>><?php echo $value; ?></option>
+                        <?php } ?>
+                    </select>
                 </div>
-            </div>
-            <div class="card-body card-block">
+            </div><div class="card-body card-block">
                 <div class="form-group">
                 <button type="button" onclick="object.resetParams().setForm('#customerGroupForm').load();" name="update" class="btn btn-outline-primary btn-sm">
                         <i class="fa fa-plus"></i>&nbsp; Save</button>

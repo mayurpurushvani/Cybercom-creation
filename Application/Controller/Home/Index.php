@@ -16,8 +16,4 @@ class Index extends \Controller\Core\Customer
         $left = $layout->getChild('left');
         echo $layout->toHtml();
     }
-    public function gridAction()
-    {
-        echo 'hello!!!';
-    }
 }

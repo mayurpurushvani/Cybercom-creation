@@ -82,10 +82,11 @@ class CMS extends \Controller\Core\Admin
                 $this->getMessage()->setSuccess('Record Inserted!');
             }
             $data = $this->getRequest()->getPost('CMS', null);
+           
             $CMS->setData($data);
             $CMS->save();
 
-            $this->gridHtmlAction();
+            $this->redirect('gridHtml', null, ['page'=>1], true );
         } catch (\Exception $e) {
             $this->getMessage()->setFailure($e->getMessage());
         }

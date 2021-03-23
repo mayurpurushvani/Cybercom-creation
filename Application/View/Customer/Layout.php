@@ -8,7 +8,7 @@
 
             <!-- HEADER DESKTOP-->
             <div class="main-content">
-                <?php echo $this->createBlock('Block\Customer\Layout\Message')->toHtml(); ?>
+                <?php //echo $this->createBlock('Block\Customer\Layout\Message')->toHtml(); ?>
                 <?php echo $this->getChild('content')->toHtml(); ?>
             </div>
         </div>

@@ -93,7 +93,7 @@ class Attribute extends \Controller\Core\Admin
 
             $attribute->save();
 
-            $this->gridHtmlAction();
+            $this->redirect('gridHtml', null, ['page'=>1], true );
         } catch (\Exception $e) {
             $this->getMessage()->setFailure($e->getMessage());
         }
@@ -105,7 +105,12 @@ class Attribute extends \Controller\Core\Admin
             if (!$id) {
                 throw new \Exception("Invalid Id");
             }
+
             $attribute = \Mage::getModel('Model\Attribute');
+            $data = $attribute->fetchRow($id);
+            $query = "ALTER TABLE `{$data->entityTypeId}` DROP COLUMN {$data->name}";
+            $attribute->update($query);
+
             if ($attribute->delete($id)) {
                 $this->getMessage()->setSuccess('Record Deleted!');
             } else {

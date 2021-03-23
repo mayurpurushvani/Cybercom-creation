@@ -3,7 +3,7 @@
 $attribute = $this->getTableRow();
 
 ?>
-<form method="post" id="attributeForm" action="<?php echo $this->getUrl()->getUrl('save', 'Attribute'); ?>">
+<form method="post" id="attributeForm" action="<?php echo $this->getUrl()->getUrl('save', 'Admin\Attribute'); ?>">
 
     <div class="col-lg-6">
         <div class="card">

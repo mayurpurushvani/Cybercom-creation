@@ -1,7 +1,7 @@
 <?php
 $CMS = $this->getTableRow();
 ?>
-<form method="post" id="CMSForm" action="<?php echo $this->getUrl()->getUrl('save', 'CMS',null, false); ?>">
+<form method="post" id="CMSForm" action="<?php echo $this->getUrl()->getUrl('save', 'Admin\CMS',null, false); ?>">
 
     <div class="col-lg-6">
         <div class="card">

@@ -19,7 +19,7 @@ class Form extends \Block\Core\Template
     {
         if (!$this->categoryOptions) {
 
-            $query = "SELECT `categoryId`, `name` FROM `{$this->getCategory()->getTableName()}`;";
+            $query = "SELECT `categoryId`, `categoryName` FROM `{$this->getCategory()->getTableName()}`;";
            
 
             $options = $this->getCategory()->getAdapter()->fetchPairs($query);

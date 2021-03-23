@@ -5,7 +5,7 @@ $category = $this->getTableRow();
 $categoryOptions = $this->getCategoryOptions();
 
 ?>
-<form method="post" id="categoryForm" action="<?php echo $this->getUrl()->getUrl('save', 'Category'); ?>">
+<form method="post" id="categoryForm" action="<?php echo $this->getUrl()->getUrl('save', 'Admin\Category'); ?>">
 
     <div class="col-lg-6">
         <div class="card">
@@ -28,25 +28,11 @@ $categoryOptions = $this->getCategoryOptions();
                     <div class="form-group">
                         <label class="form-control-label">Parent:</label>
                         <select name="category[parentId]" class="form-control">
-
-                            <!-- <?php //if ($category->parentId) { ?>
-                                <option value="<?php //echo $category->parentId ?>"><?php// print_r($categoryParentName->name);  ?></option>
-                            <?php// } else { ?>
-                                <option value=0>Select</option>
-                                <?php// if ($categories) :  ?>
-
-                                    <?php// foreach ($categories->getData() as $categoryOption) : ?>
-                                        <option value="<?php// echo $categoryOption->categoryId; ?>"><?php //echo $categoryOption->name;  ?></option>
-                                    <?php //endforeach ?>
-                                <?php //endif ?> -->
-                            <?php// } ?>
-
-                            <?php if($categoryOptions) : ?>
-                            <?php foreach($categoryOptions as $categoryId =>$name) : ?>
-                            <option value="<?php echo $categoryId; ?>"<?php if($categoryId == $category->parentId): ?>
-                            selected <?php endif; ?>><?php echo $name; ?>
-                            </option>
-                            <?php endforeach; ?>
+                            <?php if ($categoryOptions) : ?>
+                                <?php foreach ($categoryOptions as $categoryId => $name) : ?>
+                                    <option value="<?php echo $categoryId; ?>" <?php if ($categoryId == $category->parentId) : ?> selected <?php endif; ?>><?php echo $name; ?>
+                                    </option>
+                                <?php endforeach; ?>
                             <?php endif; ?>
                         </select>
 
@@ -56,7 +42,7 @@ $categoryOptions = $this->getCategoryOptions();
                 <div class="card-body card-block">
                     <div class="form-group">
                         <label class="form-control-label">Name:</label>
-                        <input type="text" name="category[name]" value="<?php echo $category->name; ?>" class="form-control">
+                        <input type="text" name="category[categoryName]" value="<?php echo $category->categoryName; ?>" class="form-control">
                     </div>
                 </div>
                 <div class="card-body card-block">

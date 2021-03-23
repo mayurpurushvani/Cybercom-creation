@@ -9,7 +9,7 @@
         <h3 class='title-5 m-b-35'>Attribute</h3>
 
 
-        <form method="post" id="attributeProductForm" action="<?php echo $this->getUrl()->getUrl('save', 'Product\Attribute'); ?>">
+        <form method="post" id="attributeProductForm" action="<?php echo $this->getUrl()->getUrl('save', 'Admin\Product\Attribute'); ?>">
 
             <?php
             if (!$attribute) :
@@ -25,7 +25,7 @@
                                 <?php if ($options) : ?>
                                     <strong><label class="form-control-label"><?php echo $value->name; ?></label> </strong>
                                     <?php if ($value->inputType == 'select-multiple') : ?>
-                                        <<?php echo str_replace('-', ' ', $value->inputType); ?> name="<?php echo $value->name; ?>[]">
+                                        <<?php echo str_replace('-', ' ', $value->inputType); ?> name="<?php echo $value->name; ?>[]" class="form-control">
                                             <?php foreach ($options->getData() as $key => $option) : ?>
                                                 <option value="<?php echo $option->name; ?>" <?php $attributeData1 = explode(',', $attributeData->{$value->name}); ?> <?php foreach ($attributeData1 as $key => $row) : ?> <?php if (trim($row) == trim($option->name)) : ?> selected <?php endif; ?> <?php endforeach; ?>>
                                                     <?php echo $option->name; ?></option>
@@ -38,13 +38,13 @@
 
                                 <?php if ($value->inputType == 'text') : ?>
                                     <strong><label class="form-control-label"><?php echo $value->name; ?></label> </strong>
-                                    <input type="<?php echo $value->inputType; ?>" name="<?php echo $value->code ?>" value="<?php echo $attributeData->{$value->name}; ?>">
+                                    <input class="form-control" type="<?php echo $value->inputType; ?>" name="<?php echo $value->code ?>" value="<?php echo $attributeData->{$value->name}; ?>">
                                 <?php endif; ?>
 
                                 <!-- TEXTAREA -->
                                 <?php if ($value->inputType == 'textarea') : ?>
                                     <strong><label class="form-control-label"><?php echo $value->name; ?></label> </strong>
-                                    <<?php echo $value->inputType; ?> name="<?php echo $value->code ?>">
+                                    <<?php  echo $value->inputType; ?> name="<?php echo $value->code ?>" class="form-control">
                                         <?php echo $attributeData->{$value->name}; ?>
                                     </<?php echo $value->inputType; ?>>
                                 <?php endif; ?>
@@ -52,7 +52,7 @@
                                 <!--SELECT -->
                                 <?php if ($options) : ?>
                                     <?php if ($value->inputType == 'select') : ?>
-                                        <<?php echo $value->inputType; ?> name="<?php echo $value->name; ?>">
+                                        <<?php echo $value->inputType; ?> name="<?php echo $value->name; ?>" class="form-control">
                                             <?php foreach ($options->getData() as $key => $option) : ?>
                                                 <option value="<?php echo $option->name; ?>" <?php if ($attributeData->{$value->name} == $option->name) : ?> selected <?php endif; ?>>
                                                     <?php echo $option->name; ?>

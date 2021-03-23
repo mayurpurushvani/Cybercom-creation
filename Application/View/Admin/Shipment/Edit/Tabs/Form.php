@@ -1,7 +1,7 @@
 <?php
 $shipment = $this->getTableRow();
 ?>
-<form method="post" id="shipmentForm" action="<?php echo $this->getUrl()->getUrl('save', 'Shipment'); ?>">
+<form method="post" id="shipmentForm" action="<?php echo $this->getUrl()->getUrl('save', 'Admin\Shipment'); ?>">
     <div class="col-lg-6">
         <div class="card">
             <div class="card-header">

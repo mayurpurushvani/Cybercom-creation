@@ -1,22 +1,40 @@
 <?php
 
 $product = $this->getTableRow();
+$options =$this->getBrandOptions();
 
 ?>
-<form method="post" id="productForm" action="<?php echo $this->getUrl()->getUrl('save', 'Product'); ?>">
+<form method="post" id="productForm" action="<?php echo $this->getUrl()->getUrl('save', 'Admin\Product'); ?>">
     <div class="col-lg-6">
         <div class="card">
             <div class="card-header" id="heading">
-            <strong><?php echo $this->getTitle(); ?></strong>
+                <strong><?php echo $this->getTitle(); ?></strong>
             </div>
             <div class="card-body card-block">
                 <div class="form-group">
                     <label class="form-control-label">Product id:</label>
-                    <input type="text" name="product[productId]" disabled="disabled" value="<?php if($product->productId) {echo $product->productId;} else { echo 'Auto';} ?>" class="form-control">
+                    <input type="text" name="product[productId]" disabled="disabled" value="<?php if ($product->productId) {
+                                                                                                echo $product->productId;
+                                                                                            } else {
+                                                                                                echo 'Auto';
+                                                                                            } ?>" class="form-control">
+                </div>
+            </div>
 
+            <div class="card-body card-block">
+                <div class="form-group">
+                    <label class="form-control-label">Brand:</label>
+                    <select name="product[brandId]" class="form-control">
+                        <option value="0">select</option>
+                        <?php foreach ($options as $brandId => $name) : ?>
+                            <option value="<?php echo $brandId; ?>" <?php if ($product->brandId == $brandId) : ?> selected <?php endif ?>>
+                                <?php echo $name; ?></option>
+                        <?php endforeach ?>
+                    </select>
 
                 </div>
             </div>
+
             <div class="card-body card-block">
                 <div class="form-group">
                     <label class="form-control-label">SKU:</label>

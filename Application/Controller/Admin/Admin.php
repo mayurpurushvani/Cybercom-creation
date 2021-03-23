@@ -36,6 +36,8 @@ class Admin extends \Controller\Core\Admin
         $left = $layout->getChild('left');
         echo $layout->toHtml();
     }
+
+
     public function formAction()
     {
         try {
@@ -43,9 +45,9 @@ class Admin extends \Controller\Core\Admin
 
             $id = (int)$this->getRequest()->getGet('editId');
             $admin = \Mage::getModel('Model\Admin');
-            if($id) {
+            if ($id) {
                 $admin = $admin->fetchRow($id);
-                if(!$admin){
+                if (!$admin) {
                     throw new \Exception('No Record Found!');
                 }
             }
@@ -62,7 +64,6 @@ class Admin extends \Controller\Core\Admin
             ];
             header("Content-type:appliction/json; charset=utf-8");
             echo json_encode($response);
-            
         } catch (\Exception $e) {
             $e->getMessage();
         }
@@ -90,8 +91,8 @@ class Admin extends \Controller\Core\Admin
             $data = $this->getRequest()->getPost('admin', null);
             $admin->setData($data);
             $admin->save();
-
-            $this->gridHtmlAction();
+            
+            $this->redirect('gridHtml', null, ['page'=>1], true );
         } catch (\Exception $e) {
             $this->getMessage()->setFailure($e->getMessage());
         }

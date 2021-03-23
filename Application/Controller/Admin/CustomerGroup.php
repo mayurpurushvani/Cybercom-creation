@@ -87,7 +87,7 @@ class CustomerGroup extends \Controller\Core\Admin
         } catch (\Exception $e) {
             $this->getMessage()->setFailure($e->getMessage());
         }
-        $this->gridHtmlAction();
+        $this->redirect('gridHtml', null, ['page'=>1], true );
     }
     
     public function deleteAction()
@@ -107,5 +107,15 @@ class CustomerGroup extends \Controller\Core\Admin
             $this->getMessage()->setFailure($e->getMessage());
         }
         $this->gridHtmlAction();
+    }
+    public function selectAction()
+    {
+        $selectId = $this->getRequest()->getGet('selectId');
+        $id = $this->getRequest()->getGet('editId');
+        $customer = \Mage::getModel('Model\CustomerGroup');
+        $customer->select($id, $selectId);
+
+        $this->gridHtmlAction();
+    
     }
 }

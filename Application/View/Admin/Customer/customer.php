@@ -1,7 +1,7 @@
 <div class="section__content section__content--p30">
     <div class="container-fluid">
         <h3 class='title-5 m-b-35'>Customer</h3>
-        <a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('form', 'Customer', [], true) ?>').resetParams().load(); " class="btn btn-outline-primary btn-sm">Add customer</a>
+        <a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('form', 'Admin\Customer', [], true) ?>').resetParams().load(); " class="btn btn-outline-primary btn-sm">Add customer</a>
 
         <div class="table-responsive table-responsive-data2">
             <div class="row">
@@ -56,13 +56,13 @@
                                     echo '<td>' . $value->updatedDate . '</td>';
                                     if ($value->status != 1) {
                             ?>
-                                        <td><a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('select', 'Customer', ['editId' => $value->customerId, 'selectId' => $value->status]) ?>').resetParams().load(); " title="Active" id="activeBtn" class="btn btn-success btn-sm">Active</a></td>
+                                        <td><a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('select', 'Admin\Customer', ['editId' => $value->customerId, 'selectId' => $value->status]) ?>').resetParams().load(); " title="Active" id="activeBtn" class="btn btn-success btn-sm">Active</a></td>
                                     <?php } else { ?>
-                                        <td><a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('select', 'Customer', ['editId' => $value->customerId, 'selectId' => $value->status]) ?>').resetParams().load(); " title="In active" id="inactiveBtn" class="btn btn-danger btn-sm">Inactive</a> </td>
+                                        <td><a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('select', 'Admin\Customer', ['editId' => $value->customerId, 'selectId' => $value->status]) ?>').resetParams().load(); " title="In active" id="inactiveBtn" class="btn btn-danger btn-sm">Inactive</a> </td>
                                     <?php } ?>
 
-                                    <td><a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('form', 'Customer', ['editId' => $value->customerId]) ?>').resetParams().load(); " class="btn btn-success btn-sm">Edit</a>&nbsp
-                                        <a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('delete', 'Customer', ['deleteId' => $value->customerId]) ?>').resetParams().load(); " class="btn btn-danger btn-sm">Delete</a>
+                                    <td><a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('form', 'Admin\Customer', ['editId' => $value->customerId]) ?>').resetParams().load(); " class="btn btn-success btn-sm">Edit</a>&nbsp
+                                        <a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('delete', 'Admin\Customer', ['deleteId' => $value->customerId]) ?>').resetParams().load(); " class="btn btn-danger btn-sm">Delete</a>
                                     </td>
 
 

@@ -1,8 +1,10 @@
 <?php
 
 namespace Model\Core;
-class Collection {
-    
+
+class Collection
+{
+
     public $data = [];
 
     public function setData(array $data)
@@ -13,10 +15,8 @@ class Collection {
     {
         return $this->data;
     }
-    public function countData()
+    public function count()
     {
         return count($this->data);
     }
 }
-
-?>

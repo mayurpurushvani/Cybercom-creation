@@ -2,6 +2,8 @@
 
 namespace Controller\Admin\Product;
 
+use Exception;
+
 \Mage::getController('Controller\Core\Admin');
 
 class Media extends \Controller\Core\Admin
@@ -33,30 +35,6 @@ class Media extends \Controller\Core\Admin
         $left = $layout->getChild('left');
         echo $layout->toHtml();
     }
-    public function formAction()
-    {
-        try {
-            $gridHtml = \Mage::getBlock('Block\Admin\Product\Edit')->toHtml();
-            $tabHtml = \Mage::getBlock('Block\Admin\Product\Edit\Tabs')->toHtml();
-            $response = [
-                'status' => 'success',
-                'element' => [
-                    [
-                        'selector' => '#contentHtml',
-                        'html' => $gridHtml
-                    ],
-                    [
-                        'selector' => '#leftHtml',
-                        'html' => $tabHtml
-                    ]
-                ]
-            ];
-            header("Content-type:appliction/json; charset=utf-8");
-            echo json_encode($response);
-        } catch (\Exception $e) {
-            $e->getMessage();
-        }
-    }
     public function deleteAction()
     {
         try {
@@ -67,7 +45,7 @@ class Media extends \Controller\Core\Admin
             }
             foreach ($ids as $id) {
                 $id = (int) $id;
-                
+
                 $query = "SELECT `image` FROM `{$productMedia->getTableName()}` WHERE `{$productMedia->getPrimaryKey()}` = '$id'";
                 $data = $productMedia->fetchRowByQuery($query);
                 $image = $data->image;
@@ -111,22 +89,26 @@ class Media extends \Controller\Core\Admin
     }
     public function addAction()
     {
-        $dir = 'images/';
-        $tmpName = $_FILES['file']['tmp_name'];
-        $fileName = $_FILES['file']['name'];
-        $newName = time()."-".rand(1000, 9999)."-".$fileName;
-        if (!file_exists("$dir{$this->getRequest()->getGet('editId')}")) {
-            mkdir("$dir{$this->getRequest()->getGet('editId')}", 0777, true);
-        }
-        $result = move_uploaded_file($tmpName, "$dir{$this->getRequest()->getGet('editId')}/{$newName}");
-        if ($result) {
+        try {
+            $dir = 'images/';
+            $tmpName = $_FILES['file']['tmp_name'];
+            $fileName = $_FILES['file']['name'];
+            $newName = time() . "-" . rand(1000, 9999) . "-" . $fileName;
+            if (!file_exists("$dir{$this->getRequest()->getGet('editId')}")) {
+                mkdir("$dir{$this->getRequest()->getGet('editId')}", 0777, true);
+            }
+            $result = move_uploaded_file($tmpName, "$dir{$this->getRequest()->getGet('editId')}/{$newName}");
+            if ($result) {
 
-            $productMedia = \Mage::getModel('Model\Product\Media');
-            $productMedia->image = "$dir{$this->getRequest()->getGet('editId')}/{$newName}";
-            $productMedia->productId = $this->getRequest()->getGet('editId');
-            
-            $productMedia->save();
-            $this->gridHtmlAction();
+                $productMedia = \Mage::getModel('Model\Product\Media');
+                $productMedia->image = "$dir{$this->getRequest()->getGet('editId')}/{$newName}";
+                $productMedia->productId = $this->getRequest()->getGet('editId');
+
+                $productMedia->save();
+                $this->gridHtmlAction();
+            }
+        } catch (\Exception $e) {
+            $this->getMessage()->setFailure($e->getMessage());
         }
     }
 }

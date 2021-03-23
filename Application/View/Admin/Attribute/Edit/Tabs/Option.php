@@ -7,7 +7,7 @@ $attribute = $this->getAttribute();
 <div class="section__content section__content--p30">
     <div class="container-fluid">
 
-        <form method="post" id="attributeOptionForm" action="<?php echo $this->getUrl()->getUrl('update', 'Attribute\Option'); ?>">
+        <form method="post" id="attributeOptionForm" action="<?php echo $this->getUrl()->getUrl('update', 'Admin\Attribute\Option'); ?>">
 
             <h3 class='title-5 m-b-35'>Attribute Option</h3>
 

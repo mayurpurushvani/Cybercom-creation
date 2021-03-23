@@ -88,13 +88,14 @@ class Customer extends \Controller\Core\Admin
         } catch (\Exception $e) {
             $this->getMessage()->setFailure($e->getMessage());
         }
-        $this->gridHtmlAction();
+        $this->redirect('gridHtml', null, ['page'=>1], true );
     }
     
     public function deleteAction()
     {
         try {
             $id = $this->getRequest()->getGet('deleteId');
+            
             if (!$id) {
                 throw new \Exception("Invalid Id");
             }
