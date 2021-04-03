@@ -4,8 +4,6 @@ namespace Controller\Admin;
 
 use Exception;
 
-\mage::getController('Controller\Core\Admin');
-
 
 class Admin extends \Controller\Core\Admin
 {
@@ -78,6 +76,7 @@ class Admin extends \Controller\Core\Admin
             $admin = \Mage::getModel('Model\Admin');
             if ($id = $this->getRequest()->getGet('editId')) {
                 $result = $admin->fetchRow($id);
+                
                 if ($result) {
                     $this->getMessage()->setSuccess('Record Updated!');
                 } else {

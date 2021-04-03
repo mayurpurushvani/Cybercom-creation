@@ -2,8 +2,6 @@
 
 namespace Block\Admin\Product;
 
-\mage::getBlock('Block\Core\Grid');
-
 class Grid extends \Block\Core\Grid
 {
     public function __construct()
@@ -111,6 +109,14 @@ class Grid extends \Block\Core\Grid
             'ajax' => true,
             'class' => 'btn btn-danger btn-sm'
         ]);
+
+        $this->addAction('addToCart', [
+            'label' => 'Add to cart',
+            'method' => 'getCartUrl',
+            'ajax' => true,
+            'class' => 'btn btn-primary'
+        ]);
+    
     }
 
     public function prepareStatus()
@@ -154,6 +160,13 @@ class Grid extends \Block\Core\Grid
         return "object.setUrl('{$url}').resetParams().load()";
         //return $this->getUrl()->getUrl('delete', null, ['deleteId' => $row->productId]);
     }
+
+    public function getCartUrl($row)
+    {
+        $url = $this->getUrl()->getUrl('addTocart', 'Admin\Cart', ['editId' => $row->productId], true);
+        return "object.setUrl('{$url}').resetParams().load()";
+    }
+
     public function getTitle()
     {
         return 'Manage Products';
@@ -198,7 +211,13 @@ class Grid extends \Block\Core\Grid
                 }
             }
             if ($count == $c) {
-                $query = "SELECT * FROM `product` LIMIT $startFrom, {$pager->getRecordsPerPage()}";
+
+                $query = "SELECT p.*,b.brandName as `brandName` 
+                from product p 
+                join brand b 
+                    on p.brandId=b.brandId
+                LIMIT $startFrom, {$pager->getRecordsPerPage()}";
+
                 $collection = $product->fetchAll($query);
                 $this->setCollection($collection);
                 return $this;
@@ -210,7 +229,10 @@ class Grid extends \Block\Core\Grid
                 }
             }
             $filter = array_combine($keys, $values);
-            $query = "SELECT * FROM `product` WHERE ";
+            $query = "SELECT p.*,b.brandName as `brandName` 
+                from product p 
+                join brand b 
+                    on p.brandId=b.brandId WHERE ";
             foreach ($filter as $key => $value) {
                 $where .= $key . " = '" . $value . "' AND ";
             }
@@ -231,11 +253,16 @@ class Grid extends \Block\Core\Grid
             $this->setCollection($collections);
             return $this;
         } else {
-            $query = "SELECT * FROM `product` LIMIT $startFrom, {$pager->getRecordsPerPage()}";
+            $query = "SELECT p.*,b.brandName as `brandName` 
+                from product p 
+                join brand b 
+                    on p.brandId=b.brandId
+                LIMIT $startFrom, {$pager->getRecordsPerPage()}";
             $collection = $product->fetchAll($query);
 
             $this->setCollection($collection);
             return $this;
         }
     }
+   
 }

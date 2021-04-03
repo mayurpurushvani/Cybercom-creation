@@ -5,17 +5,19 @@
 <?php $status = $this->getStatus(); ?>
 <?php $filters = $this->getFilter(); ?>
 
+
 <div class="section__content section__content--p30">
     <div class="container-fluid">
         <h3 class='title-5 m-b-35'><?= $this->getTitle(); ?></h3>
-
 
         <?php if ($buttons) : ?>
             <?php foreach ($buttons as $key => $button) : ?>
                 <?php if ($button['ajax']) : ?>
                     <a href="javascript:void(0)" onclick="<?= $this->getAddNewUrl($button['method']); ?>" class="<?= $button['class'] ?>"><?= $button['label'] ?></a>
+                    <a href="#" class="btn btn-danger btn-sm" onclick="clearFilter(); object.resetParams().setForm('#form').load();">Clear Filter</a>
                 <?php else : ?>
                     <a href="<?= $this->getAddNewUrl($button['method']); ?>" class="<?= $button['class'] ?> "><?= $button['label'] ?></a>
+
                 <?php endif; ?>
             <?php endforeach; ?>
         <?php endif; ?>
@@ -30,7 +32,7 @@
                                 <?php if ($columns) : ?>
                                     <?php foreach ($columns as $key => $column) : ?>
                                         <th><?= $column['label'] ?>
-                                            <input type='text' value="<?= $column['value'] ?>" class='form-control' name=<?= $column['name'] ?>>
+                                            <input type='text' value="<?= $column['value'] ?>" class='form-control clear' name=<?= $column['name'] ?>>
                                         </th>
                                     <?php endforeach; ?>
 
@@ -90,7 +92,6 @@
                                                 <?php endforeach; ?>
                                             </td>
                                         <?php endif; ?>
-
                                     </tr>
                                 <?php endforeach; ?>
                             <?php endif; ?>
@@ -104,20 +105,27 @@
 
 <!--PAGER CLASS -->
 <center>
-<div class="pagination">
+    <div class="pagination">
 
-    <?php if ($this->getPager()->getPrevious()) : ?>
-        <a href="javascript:void(0);" onclick="object.resetParams().setUrl('<?php echo $this->getUrl()->getUrl(null, null, ['page' => $this->getPager()->getPrevious()]) ?>').load(); ">&laquo;</a>
-    <?php endif; ?>
-
-
-    <a href="#" class="active"> <?php echo $this->getPager()->getCurrentPage(); ?></a>
+        <?php if ($this->getPager()->getPrevious()) : ?>
+            <a href="javascript:void(0);" onclick="object.resetParams().setUrl('<?php echo $this->getUrl()->getUrl(null, null, ['page' => $this->getPager()->getPrevious()]) ?>').load(); ">&laquo;</a>
+        <?php endif; ?>
 
 
-    <?php if ($this->getPager()->getNext()) : ?>
-        <a href="javascript:void(0);" onclick="object.resetParams().setUrl('<?php echo $this->getUrl()->getUrl(null, null, ['page' => $this->getPager()->getNext()]) ?>').load(); ">&raquo;</a>
-    <?php endif; ?>
+        <a href="#" class="active"> <?php echo $this->getPager()->getCurrentPage(); ?></a>
 
-</div>
+
+        <?php if ($this->getPager()->getNext()) : ?>
+            <a href="javascript:void(0);" onclick="object.resetParams().setUrl('<?php echo $this->getUrl()->getUrl(null, null, ['page' => $this->getPager()->getNext()]) ?>').load(); ">&raquo;</a>
+        <?php endif; ?>
+
+    </div>
 </center>
 <!--PAGER CLASS OVER-->
+<script>
+    function clearFilter() {
+        $(".clear").each(function() {
+            $(this).val('')
+        });
+    }
+</script>

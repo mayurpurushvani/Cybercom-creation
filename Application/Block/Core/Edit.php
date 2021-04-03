@@ -2,7 +2,6 @@
 
 namespace Block\Core;
 
-\mage::getBlock('Block\Core\Template');
 
 class Edit extends \Block\Core\Template
 {

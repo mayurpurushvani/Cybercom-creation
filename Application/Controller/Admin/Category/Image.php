@@ -4,8 +4,6 @@ namespace Controller\Admin\Category;
 
 use Exception;
 
-\Mage::getController('Controller\Core\Admin');
-
 class Image extends \Controller\Core\Admin
 {
     public function gridHtmlAction()

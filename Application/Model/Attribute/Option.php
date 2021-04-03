@@ -2,9 +2,6 @@
 
 namespace Model\Attribute;
 
-\mage::getModel('Model\Core\Adapter');
-\mage::getModel('Model\Core\Table');
-
 class Option extends \Model\Core\Table
 {
     protected $attribute = null;

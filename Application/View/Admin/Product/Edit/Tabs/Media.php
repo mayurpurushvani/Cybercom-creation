@@ -40,10 +40,10 @@
                                         echo '<tr id="' . $value->mediaId . '">';
                             ?>
                                         <td><label name="img[mediaId]"><?php echo $value->mediaId; ?></label></td>
-                                        <?php echo '<td><img src="' . $value->image . '"></img></td>';
+                                        <?php echo '<td><img src="' . $value->image . '" style="height:200px; width : 250px;"></img></td>';
 
                                         ?>
-                                        <td><input type="text" class="form-control" style="background-color: #c5c5c5;" name="img[data][<?php echo $value->mediaId; ?>][label]" value="<?php echo $value->label; ?>"></td>
+                                        <td><input type="text" class="form-control" name="img[data][<?php echo $value->mediaId; ?>][label]" value="<?php echo $value->label; ?>"></td>
 
                                         <td><input type="radio" name="img[thumb]" value="<?php echo $value->mediaId; ?>" <?php if ($value->thumb == 1) {
                                                                                                                                 echo "checked";

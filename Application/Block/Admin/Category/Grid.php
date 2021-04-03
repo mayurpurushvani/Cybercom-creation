@@ -2,8 +2,6 @@
 
 namespace Block\Admin\Category;
 
-\mage::getBlock('Block\Core\Grid');
-
 class Grid extends \Block\Core\Grid
 {
     protected $categoriesOptions = null;

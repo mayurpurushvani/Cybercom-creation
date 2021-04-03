@@ -1,8 +1,6 @@
 <?php
 
 namespace Model;
-\mage::getModel('Model\Core\Adapter');
-\mage::getModel('Model\Core\Table');
 
 
 class Payment extends \Model\Core\Table
@@ -17,9 +15,15 @@ class Payment extends \Model\Core\Table
     public function getStatusOptions()
     {
         return [
-            self::STATUS_DESABLED=>"Disable", //or use self::
-            self::STATUS_ENABLE=>"Enable"
+            self::STATUS_DESABLED => "Disable", //or use self::
+            self::STATUS_ENABLE => "Enable"
         ];
     }
 
+    public function getPaymentMethods()
+    {
+        $query = "SELECT * FROM payment WHERE STATUS = 1";
+        $paymentMethods = \Mage::getModel('Model\Payment')->fetchAll($query);
+        return $paymentMethods;
+    }
 }

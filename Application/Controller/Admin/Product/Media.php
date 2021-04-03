@@ -4,8 +4,6 @@ namespace Controller\Admin\Product;
 
 use Exception;
 
-\Mage::getController('Controller\Core\Admin');
-
 class Media extends \Controller\Core\Admin
 {
     public function gridHtmlAction()

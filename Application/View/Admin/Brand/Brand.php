@@ -39,11 +39,11 @@
 
                                     <td><label name="brandId"><?php echo $value->brandId; ?></label></td>
 
-                                    <?php echo '<td><img src="' . $value->image . '"></img></td>'; ?>
+                                    <?php echo '<td><img src="' . $value->image . '" style="height:200px; width : 250px;"></img></td>'; ?>
 
-                                    <td><input class="form-control" type="text" style="background-color: #c5c5c5;" name="img[data][<?php echo $value->brandId; ?>][brandName]" value="<?php echo $value->brandName; ?>"></td>
+                                    <td><input class="form-control" type="text" name="img[data][<?php echo $value->brandId; ?>][brandName]" value="<?php echo $value->brandName; ?>"></td>
 
-                                    <td><input class="form-control" type="text" style="background-color: #c5c5c5;" name="img[data][<?php echo $value->brandId; ?>][sortOrder]" value="<?php echo $value->sortOrder; ?>"></td>
+                                    <td><input class="form-control" type="text" name="img[data][<?php echo $value->brandId; ?>][sortOrder]" value="<?php echo $value->sortOrder; ?>"></td>
 
                                     <?php if ($value->status != 1) : ?>
                                         <td><a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('select', 'Admin\Brand', ['editId' => $value->brandId, 'selectId' => $value->status]) ?>').resetParams().load(); " title="Active" id="activeBtn" style="color: white;" class="btn btn-success btn-sm">Active</a></td>

@@ -2,9 +2,6 @@
 
 namespace Model;
 
-\mage::getModel('Model\Core\Adapter');
-\mage::getModel('Model\Core\Table');
-
 class Attribute extends \Model\Core\Table
 {
     public function __construct()

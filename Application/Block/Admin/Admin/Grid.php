@@ -2,10 +2,6 @@
 
 namespace Block\Admin\Admin;
 
-\mage::getBlock('Block\Core\Grid');
-
-\Mage::loadFileByClassName('Controller\Core\Pager');
-
 class Grid extends \Block\Core\Grid
 {
     public function __construct()
@@ -39,13 +35,13 @@ class Grid extends \Block\Core\Grid
             'type' => 'text'
         ]);
 
-        $this->addColumn('password', [
-            'field' => 'password',
-            'label' => 'Password',
-            'value' => $admin['password'],
-            'name' => 'filter[adminTable][password]',
-            'type' => 'text'
-        ]);
+        // $this->addColumn('password', [
+        //     'field' => 'password',
+        //     'label' => 'Password',
+        //     'value' => $admin['password'],
+        //     'name' => 'filter[adminTable][password]',
+        //     'type' => 'text'
+        // ]);
 
         $this->addColumn('createdDate', [
             'field' => 'createdDate',
@@ -121,151 +117,78 @@ class Grid extends \Block\Core\Grid
 
     /**COLLECTION */
 
-    // public function prepareCollection()
-    // {
-    //     $keys = [];
-    //     $values = [];
-    //     $where = null;
-    //     $c = 0;
-
-
-    //     /**PAGER CLASS */
-    //     $pager = \Mage::getController('Controller\Core\Pager');
-    //     $admin = \Mage::getModel('Model\Admin');
-    //     $grid = \Mage::getBlock('Block\Core\Grid');
-    //     $rows = $admin->fetchAll();
-    //     $count = $rows->count();
-    //     $pager->setTotalRecords($count);
-    //     $page = $this->getRequest()->getGet('page');
-    //     $pager->setCurrentPage($page);
-    //     $pager->setRecordsPerPage(5);
-    //     $startFrom = ($pager->getCurrentPage() - 1) * ($pager->getRecordsPerPage());
-    //     $pager->calculate();
-    //     $this->setPager($pager);
-    //     /**PAGER CLASS OVER */
-
-
-    //     $filterModel = \Mage::getModel('Model\Admin\Filter');
-    //     $adminData = $filterModel->getFilters('adminTable');
-
-
-    //     if ($adminData) {
-    //         $count = count($adminData);
-    //         foreach ($adminData as $key => $value) {
-    //             if ($value == '') {
-    //                 $c++;
-    //             }
-    //         }
-    //         if ($count == $c) {
-    //             $query = "SELECT * FROM `admin` LIMIT $startFrom, {$pager->getRecordsPerPage()}";
-    //             $collection = $admin->fetchAll($query);
-    //             $this->setCollection($collection);
-    //             return $this;
-    //         }
-    //         foreach ($adminData as $key => $value) {
-    //             if ($value != "") {
-    //                 $keys[] = $key;
-    //                 $values[] = $value;
-    //             }
-    //         }
-    //         $filter = array_combine($keys, $values);
-    //         $query = "SELECT * FROM `admin` WHERE ";
-    //         foreach ($filter as $key => $value) {
-    //             $where .= $key . " = '" . $value . "' AND ";
-    //         }
-
-    //         $where = substr($where, 0, -4);
-    //         $sql = "$query $where";
-
-    //         $collection = $admin->fetchAll($sql);
-    //         $count = $collection->count();
-    //         $pager->setTotalRecords($count);
-
-    //         $startFrom = ($pager->getCurrentPage() - 1) * ($pager->getRecordsPerPage());
-    //         $pager->calculate();
-
-    //         $sql = "$query $where LIMIT $startFrom, {$pager->getRecordsPerPage()}";
-    //         $collections = $admin->fetchAll($sql);
-    //         $this->setCollection($collections);
-    //         return $this;
-    //     } 
-    // }
-
-
-
     public function prepareCollection()
     {
+        $keys = [];
+        $values = [];
+        $where = null;
+        $c = 0;
 
+
+        /**PAGER CLASS */
         $pager = \Mage::getController('Controller\Core\Pager');
         $admin = \Mage::getModel('Model\Admin');
+        $grid = \Mage::getBlock('Block\Core\Grid');
         $rows = $admin->fetchAll();
-
-        if ($rows) {
-            $count = $rows->count();
-            $pager->setTotalRecords($count);
-        }
+        $count = $rows->count();
+        $pager->setTotalRecords($count);
         $page = $this->getRequest()->getGet('page');
         $pager->setCurrentPage($page);
         $pager->setRecordsPerPage(5);
         $startFrom = ($pager->getCurrentPage() - 1) * ($pager->getRecordsPerPage());
-
-        $pagers = $pager->calculate();
+        $pager->calculate();
         $this->setPager($pager);
+        /**PAGER CLASS OVER */
 
-        $admin = \Mage::getModel('Model\Admin');
+
         $filterModel = \Mage::getModel('Model\Admin\Filter');
         $adminData = $filterModel->getFilters('adminTable');
-        $keys = [];
-        $values = [];
-        $condition = null;
 
-        $c = 0;
+
         if ($adminData) {
             $count = count($adminData);
-
             foreach ($adminData as $key => $value) {
                 if ($value == '') {
                     $c++;
                 }
             }
             if ($count == $c) {
-                $query = "SELECT * FROM ADMIN LIMIT $startFrom,{$pager->getRecordsPerPage()} ";
+                $query = "SELECT * FROM `admin` LIMIT $startFrom, {$pager->getRecordsPerPage()}";
                 $collection = $admin->fetchAll($query);
                 $this->setCollection($collection);
                 return $this;
             }
-
             foreach ($adminData as $key => $value) {
                 if ($value != "") {
                     $keys[] = $key;
                     $values[] = $value;
                 }
             }
-
             $filter = array_combine($keys, $values);
-            $query = "SELECT * FROM `{$admin->getTableName()}` WHERE ";
-
+            $query = "SELECT * FROM `admin` WHERE ";
             foreach ($filter as $key => $value) {
-                $condition .= $key . " = '" . $value . "' AND ";
+                $where .= $key . " = '" . $value . "' AND ";
             }
-            $condition = substr($condition, 0, -4);
-            $sql = "$query $condition";
 
-            $rows = $admin->fetchAll($sql);
-
-            $count = $rows->count();
-            $pager->setTotalRecords($count);
-            $pager->setCurrentPage(1);
-            $startFrom = ($pager->getCurrentPage() - 1) * ($pager->getRecordsPerPage());
-            $pager = $pager->calculate();
-            $this->setPager($pager);
-            $sql = "$query $condition LIMIT $startFrom ,{$pager->getRecordsPerPage()}";
+            $where = substr($where, 0, -4);
+            $sql = "$query $where";
 
             $collection = $admin->fetchAll($sql);
-            if ($collection) {
-                $this->setCollection($collection);
-                return $this;
-            }
+            $count = $collection->count();
+            $pager->setTotalRecords($count);
+
+            $startFrom = ($pager->getCurrentPage() - 1) * ($pager->getRecordsPerPage());
+            $pager->calculate();
+
+            $sql = "$query $where LIMIT $startFrom, {$pager->getRecordsPerPage()}";
+            $collections = $admin->fetchAll($sql);
+            $this->setCollection($collections);
+            return $this;
+        }  else {
+            $query = "SELECT * FROM `admin` LIMIT $startFrom, {$pager->getRecordsPerPage()}";
+            $collection = $admin->fetchAll($query);
+            $this->setCollection($collection);
+            return $this;
         }
     }
 }

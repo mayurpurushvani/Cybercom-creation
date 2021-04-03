@@ -2,7 +2,6 @@
 
 namespace Controller\Admin;
 
-\Mage::getController('Controller\Core\Admin');
 class Payment extends \Controller\Core\Admin
 {
     public function gridHtmlAction()

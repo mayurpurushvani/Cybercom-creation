@@ -1,7 +1,6 @@
 <?php
 
 namespace Block\Admin\Shipment;
-\mage::getBlock('Block\Core\Edit');
 
 class Edit extends \Block\Core\Edit
 {

@@ -2,12 +2,6 @@
 
 namespace Block\Core;
 
-\Mage::getBlock('Block\Core\Layout\Content');
-\Mage::getBlock('Block\Core\Layout\Header');
-\Mage::getBlock('Block\Core\Layout\Left');
-\Mage::getBlock('Block\Core\Layout\Footer');
-\Mage::getBlock('Block\Core\Template');
-
 class Layout extends \Block\Core\Template
 {
     public function __construct(\Controller\Core\Admin $controller = null)

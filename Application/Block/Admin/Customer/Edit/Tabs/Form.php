@@ -2,7 +2,6 @@
 
 namespace Block\Admin\Customer\Edit\Tabs;
 
-\Mage::loadFileByClassName('Block\Core\Template');
 class Form extends \Block\Core\Template
 {
 

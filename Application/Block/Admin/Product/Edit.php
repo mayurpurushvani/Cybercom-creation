@@ -2,8 +2,6 @@
 
 namespace Block\Admin\Product;
 
-\mage::getBlock('Block\Core\Edit');
-
 class Edit extends \Block\Core\Edit
 {
     protected $product = null;

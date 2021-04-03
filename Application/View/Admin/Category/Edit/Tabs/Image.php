@@ -45,7 +45,7 @@
 
                                         <td><label name="img[imageId]"><?php echo $value->imageId; ?></label></td>
 
-                                        <?php echo '<td><img src="' . $value->image . '"></img></td>'; ?>
+                                        <?php echo '<td><img src="' . $value->image . '" style="height:200px; width : 250px;"></img></td>'; ?>
 
                                         <td><input type="radio" name="img[icon]" value="<?php echo $value->imageId; ?>" <?php if ($value->icon == 1) {
                                                                                                                             echo "checked";

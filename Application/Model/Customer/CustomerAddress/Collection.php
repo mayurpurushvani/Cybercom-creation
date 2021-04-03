@@ -1,8 +1,6 @@
 <?php
 
 namespace Model\Customer\CustomerAddress;
-\Mage::loadFileByClassName('Model\Core\Collection');
-
 class Collection extends \Model\Core\Collection {
     
     public function __construct()

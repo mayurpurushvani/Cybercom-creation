@@ -2,7 +2,7 @@
 
 namespace Block\Admin\Attribute\Edit\Tabs;
 
-\Mage::loadFileByClassName('Block\Core\Template');
+
 class Form extends \Block\Core\Template {
     
     protected $attribute = null;

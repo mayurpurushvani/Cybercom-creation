@@ -1,9 +1,6 @@
 <?php
 
 namespace Model\Product;
-\mage::getModel('Model\Core\Adapter');
-\mage::getModel('Model\Core\Table');
-
 
 class Media extends \Model\Core\Table
 {

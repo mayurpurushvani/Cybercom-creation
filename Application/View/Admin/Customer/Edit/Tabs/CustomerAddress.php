@@ -4,7 +4,6 @@ $address = $this->getBillingAddress();
 
 $shipping = $this->getShippingAddress();
 
-
 ?>
 
 <form method="post" id="customerAddressForm" action="<?php echo $this->getUrl()->getUrl('save', 'Admin\Customer\CustomerAddress'); ?>">
@@ -19,7 +18,9 @@ $shipping = $this->getShippingAddress();
                 <div class="form-group">
                     <label class="form-control-label">Address id:</label>
                     <?php if ($address->addressId) { ?>
-                        <input type="hidden" name="billingId" value=" <?php   if ($address) { echo $address->addressId; } ?>">
+                        <input type="hidden" name="billingId" value=" <?php if ($address) {
+                                                                            echo $address->addressId;
+                                                                        } ?>">
                     <?php } ?>
                     <input type="text" name="billing[addressId]" disabled="disabled" value="<?php if ($address) {
                                                                                                 echo $address->addressId;
@@ -31,31 +32,41 @@ $shipping = $this->getShippingAddress();
             <div class="card-body card-block">
                 <div class="form-group">
                     <label class="form-control-label">Address:</label>
-                    <input type="text" name="billing[address]" value="<?php if ($address) { echo $address->address; } ?>" class="form-control">
+                    <input type="text" name="billing[address]" value="<?php if ($address) {
+                                                                            echo $address->address;
+                                                                        } ?>" class="form-control">
                 </div>
             </div>
             <div class="card-body card-block">
                 <div class="form-group">
                     <label class="form-control-label">City:</label>
-                    <input type="text" name="billing[city]" value="<?php if ($address) { echo $address->city; } ?>" class="form-control">
+                    <input type="text" name="billing[city]" value="<?php if ($address) {
+                                                                        echo $address->city;
+                                                                    } ?>" class="form-control">
                 </div>
             </div>
             <div class="card-body card-block">
                 <div class="form-group">
                     <label class="form-control-label">State:</label>
-                    <input type="text" name="billing[state]" value="<?php if ($address) { echo $address->state; } ?>" class="form-control">
+                    <input type="text" name="billing[state]" value="<?php if ($address) {
+                                                                        echo $address->state;
+                                                                    } ?>" class="form-control">
                 </div>
             </div>
             <div class="card-body card-block">
                 <div class="form-group">
                     <label class="form-control-label">Zip Code:</label>
-                    <input type="tel" name="billing[zipCode]" value="<?php  if ($address) { echo $address->zipCode; } ?>" class="form-control">
+                    <input type="tel" name="billing[zipCode]" value="<?php if ($address) {
+                                                                            echo $address->zipCode;
+                                                                        } ?>" class="form-control">
                 </div>
             </div>
             <div class="card-body card-block">
                 <div class="form-group">
                     <label class="form-control-label">Country:</label>
-                    <input type="text" name="billing[country]" value="<?php if ($address) { echo $address->country; } ?>" class="form-control">
+                    <input type="text" name="billing[country]" value="<?php if ($address) {
+                                                                            echo $address->country;
+                                                                        } ?>" class="form-control">
                 </div>
             </div>
             <div class="card-body card-block">
@@ -66,10 +77,10 @@ $shipping = $this->getShippingAddress();
             </div>
         </div>
     </div>
-    
+
     <div class="col-lg-6">
         <div class="card">
-      
+
 
             <!--SHIPING-->
             <h4 style="color: gray; padding-left: 20px; margin-top: 40px;">SHIPPING ADDRESS</h4>
@@ -77,7 +88,9 @@ $shipping = $this->getShippingAddress();
                 <div class="form-group">
                     <label class="form-control-label">Address id:</label>
                     <?php if ($shipping) { ?>
-                        <input type="hidden" name="shippingId" value=" <?php  if ($shipping) { echo $shipping->addressId;  }?>">
+                        <input type="hidden" name="shippingId" value=" <?php if ($shipping) {
+                                                                            echo $shipping->addressId;
+                                                                        } ?>">
                     <?php } ?>
                     <input type="text" name="shipping[addressId]" disabled="disabled" value="<?php if ($shipping) {
                                                                                                     echo $shipping->addressId;
@@ -89,31 +102,41 @@ $shipping = $this->getShippingAddress();
             <div class="card-body card-block">
                 <div class="form-group">
                     <label class="form-control-label">Address:</label>
-                    <input type="text" name="shipping[address]" value="<?php if ($shipping) {  echo $shipping->address; } ?>" class="form-control">
+                    <input type="text" name="shipping[address]" value="<?php if ($shipping) {
+                                                                            echo $shipping->address;
+                                                                        } ?>" class="form-control">
                 </div>
             </div>
             <div class="card-body card-block">
                 <div class="form-group">
                     <label class="form-control-label">City:</label>
-                    <input type="text" name="shipping[city]" value="<?php if ($shipping) {  echo $shipping->city; } ?>" class="form-control">
+                    <input type="text" name="shipping[city]" value="<?php if ($shipping) {
+                                                                        echo $shipping->city;
+                                                                    } ?>" class="form-control">
                 </div>
             </div>
             <div class="card-body card-block">
                 <div class="form-group">
                     <label class="form-control-label">State:</label>
-                    <input type="text" name="shipping[state]" value="<?php if ($shipping) {  echo $shipping->state; } ?>" class="form-control">
+                    <input type="text" name="shipping[state]" value="<?php if ($shipping) {
+                                                                            echo $shipping->state;
+                                                                        } ?>" class="form-control">
                 </div>
             </div>
             <div class="card-body card-block">
                 <div class="form-group">
                     <label class="form-control-label">Zip Code:</label>
-                    <input type="tel" name="shipping[zipCode]" value="<?php if ($shipping) {  echo $shipping->zipCode; } ?>" class="form-control">
+                    <input type="tel" name="shipping[zipCode]" value="<?php if ($shipping) {
+                                                                            echo $shipping->zipCode;
+                                                                        } ?>" class="form-control">
                 </div>
             </div>
             <div class="card-body card-block">
                 <div class="form-group">
                     <label class="form-control-label">Country:</label>
-                    <input type="text" name="shipping[country]" value="<?php if ($shipping) {  echo $shipping->country; } ?>" class="form-control">
+                    <input type="text" name="shipping[country]" value="<?php if ($shipping) {
+                                                                            echo $shipping->country;
+                                                                        } ?>" class="form-control">
                 </div>
             </div>
 
@@ -127,7 +150,7 @@ $shipping = $this->getShippingAddress();
                         ?>
                             <option value="<?php //echo $key 
                                             ?>" <?php //if ($address->status == $key) { 
-                                                                    ?> selected <?php// } ?>><?php// echo $value; ?></option>
+                                                ?> selected <?php// } ?>><?php// echo $value; ?></option>
                         <?php// } ?>
                     </select>
                 </div>
@@ -146,4 +169,5 @@ $shipping = $this->getShippingAddress();
             </div>
         </div>
     </div>
+
 </form>

@@ -1,9 +1,6 @@
 <?php
 
 namespace Model;
-\mage::getModel('Model\Core\Adapter');
-\mage::getModel('Model\Core\Table');
-
 class Admin extends \Model\Core\Table
 {
     const STATUS_ENABLE = 1;

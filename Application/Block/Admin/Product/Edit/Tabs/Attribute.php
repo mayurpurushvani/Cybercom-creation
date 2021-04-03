@@ -4,7 +4,6 @@ namespace Block\Admin\Product\Edit\Tabs;
 
 use Mage;
 
-\Mage::loadFileByClassName('Block\Core\Template');
 class Attribute extends \Block\Core\Template
 {
 

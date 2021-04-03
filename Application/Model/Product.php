@@ -1,8 +1,6 @@
 <?php
 
 namespace Model;
-\mage::getModel('Model\Core\Adapter');
-\mage::getModel('Model\Core\Table');
 
 
 class Product extends \Model\Core\Table

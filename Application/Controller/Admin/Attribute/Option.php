@@ -2,9 +2,6 @@
 
 namespace Controller\Admin\Attribute;
 
-\mage::getController('Controller\Core\Admin');
-
-
 class Option extends \Controller\Core\Admin
 {
 

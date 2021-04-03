@@ -2,8 +2,6 @@
 
 namespace Controller\Admin;
 
-\Mage::getController('Controller\Core\Admin');
-
 class Brand extends \Controller\Core\Admin
 {
     public function gridHtmlAction()

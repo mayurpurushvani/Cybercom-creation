@@ -2,7 +2,6 @@
 
 namespace Block\Admin\Category\Edit\Tabs;
 
-\Mage::loadFileByClassName('Block\Core\Template');
 class Attribute extends \Block\Core\Template
 {
 

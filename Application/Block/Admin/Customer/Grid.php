@@ -2,8 +2,6 @@
 
 namespace Block\Admin\Customer;
 
-\mage::getBlock('Block\Core\Grid');
-
 class Grid extends \Block\Core\Grid
 {
     public function __construct()
@@ -251,6 +249,29 @@ class Grid extends \Block\Core\Grid
             $sql = "$query $where LIMIT $startFrom, {$pager->getRecordsPerPage()}";
             $collections = $customer->fetchAll($sql);
             $this->setCollection($collections);
+            return $this;
+        } else {
+            $query =
+                "SELECT c.customerId as `customerId`,
+                    cg.name AS `name`,
+                    c.firstName,
+                    ca.addressType,
+                    ca.zipCode,
+                    c.mobile,
+                    c.lastName,
+                    c.email,
+                    c.status,
+                    c.createdDate,
+                    c.updatedDate,
+                    ca.zipCode AS `zipCode` 
+                    FROM ((customer c LEFT JOIN customer_group cg
+                        ON c.groupId=cg.groupId)
+                    LEFT JOIN customer_address ca 
+                        ON c.customerId=ca.customerId and addressType='billing')  
+                        LIMIT $startFrom, {$pager->getRecordsPerPage()}";
+
+            $collection = $customer->fetchAll($query);
+            $this->setCollection($collection);
             return $this;
         }
     }

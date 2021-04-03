@@ -2,7 +2,6 @@
 
 namespace Controller\Admin;
 
-\Mage::getController('Controller\Core\Admin');
 
 class Product extends \Controller\Core\Admin
 {

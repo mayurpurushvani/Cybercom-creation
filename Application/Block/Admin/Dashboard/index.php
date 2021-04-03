@@ -1,7 +1,6 @@
 <?php
 
 namespace Block\Admin\Dashboard;
-\mage::getBlock('Block\Core\Template');
 
 class Index extends \Block\Core\Template
 {

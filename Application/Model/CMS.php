@@ -1,7 +1,5 @@
 <?php
 namespace Model;
-\mage::getModel('Model\Core\Adapter');
-\mage::getModel('Model\Core\Table');
 
 class CMS extends \Model\Core\Table
 {

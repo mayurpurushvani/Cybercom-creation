@@ -1,7 +1,7 @@
 <?php
 
 namespace Block\Admin\Product\Edit\Tabs;
-\Mage::loadFileByClassName('Block\Core\Template');
+
 class GroupPrice extends \Block\Core\Template {
     
     protected $product = null;

@@ -2,11 +2,6 @@
 
 namespace Controller\Core;
 
-\mage::loadFileByClassName('Model\Core\Request');
-\mage::loadFileByClassName('Model\Customer\Message');
-\mage::loadFileByClassName('Controller\Core\Abstracts');
-
-
 class Customer extends \Controller\Core\Abstracts
 {
     protected $request = null;

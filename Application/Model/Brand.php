@@ -1,8 +1,6 @@
 <?php
 
 namespace Model;
-\mage::getModel('Model\Core\Table');
-
 
 class Brand extends \Model\Core\Table
 {

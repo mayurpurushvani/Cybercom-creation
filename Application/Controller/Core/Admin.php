@@ -2,11 +2,6 @@
 
 namespace Controller\Core;
 
-\mage::loadFileByClassName('Model\Core\Request');
-\mage::loadFileByClassName('Model\Admin\Message');
-\mage::loadFileByClassName('Controller\Core\Abstracts');
-
-
 class Admin extends \Controller\Core\Abstracts
 {
     protected $request = null;

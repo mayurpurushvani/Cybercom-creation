@@ -1,7 +1,7 @@
 <?php
 
 namespace Block\Admin\Product\Edit\Tabs;
-\Mage::loadFileByClassName('Block\Core\Template');
+
 class Media extends \Block\Core\Template {
 
     protected $media = null;

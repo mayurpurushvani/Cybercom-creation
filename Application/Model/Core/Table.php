@@ -6,9 +6,20 @@ class Table
 {
     protected $primaryKey = null;
     protected $tableName = null;
+    protected $originalData = [];
     public $data = [];
     protected $adapter = null;
     protected $arrayData = [];
+
+    public function setOriginalData($originalData)
+    {
+        $this->originalData = $originalData;
+        return $this;
+    }
+    public function getOriginlaData()
+    {
+        return $this->originalData;
+    }
 
     public function getPrimaryKey()
     {
@@ -31,15 +42,17 @@ class Table
     public function setData(array $data)
     {
         $this->data = array_merge($this->data, $data);
-
         return $this;
     }
     public function getData()
     {
         return $this->data;
     }
-
-
+    public function resetData()
+    {
+        $this->data = [];
+        return $this;
+    }
 
     public function setArrayData(array $key, array $arrayData)
     {
@@ -71,10 +84,23 @@ class Table
     }
     public function __get($key)
     {
-        if (!array_key_exists($key, $this->data)) {
-            return null;
+        if (array_key_exists($key, $this->data)) {
+            return $this->data[$key];
         }
-        return $this->data[$key];
+        if (array_key_exists($key, $this->originalData)) {
+            return $this->originalData[$key];
+        }
+        return null;
+    }
+
+    public function load($value, $option = null)
+    {
+        if (!$option) {
+            $query = "Select * from `{$this->getTableName()}` where `{$this->getPrimaryKey()}` = $value";
+            return $this->fetchRow($query);
+        }
+        $query = "Select * from `{$this->getTableName()}` where `{$option}` = $value";
+        return $this->fetchRow($query);
     }
     public function loadById($value)
     {
@@ -90,7 +116,8 @@ class Table
         if (!$row) {
             return false;
         }
-        $this->data = $row;
+        $this->setOriginalData($row);
+        $this->resetData();
         return $this;
     }
     public function fetchRowByQuery($query)
@@ -100,7 +127,8 @@ class Table
         if (!$row) {
             return false;
         }
-        $this->data = $row;
+        $this->setOriginalData($row);
+        $this->resetData();
         return $this;
     }
     public function select($value = null, $selectId = null)
@@ -124,12 +152,13 @@ class Table
         $row = $this->getAdapter()->update($query);
     }
 
+
     public function arrayUpdate($id = null)
     {
         $data = $this->getArrayData();
         foreach ($data as $key => $value) {
             $values = implode(',', $value);
-          
+
             $query = "UPDATE `{$this->getTableName()}` SET $key = '$values' WHERE `{$this->getPrimaryKey()}` = '$id'";
             $this->getAdapter()->update($query);
         }
@@ -147,7 +176,7 @@ class Table
         }
         foreach ($rows as $key => $value) {
             $key = new $this;
-            $key->setData($value);
+            $key->setOriginalData($value);
             $rowArray[] = $key;
         }
         // return $rowArray;
@@ -160,23 +189,29 @@ class Table
 
     public function save()
     {
-
         if (array_key_exists($this->getPrimaryKey(), $this->data)) {
+            unset($this->data[$this->getPrimaryKey()]);
+        }
+        $id = (int) $this->{$this->getPrimaryKey()};
+        
+        
+        if (!$this->data) {
+            return false;
+        }
+        if ($id){
             //update
             $field = array_keys($this->data);
             $value = array_values($this->data);
 
             $final = null;
-            $id = '';
             for ($i = 0; $i < count($field); $i++) {
-                if ($field[$i] == $this->getPrimaryKey()) {
-                    $id = $value[$i];
-                    continue;
-                }
+              
                 $final = $final . "`" . $field[$i] . "`='" . $value[$i] . "',";
             }
             $final = rtrim($final, ",");
             $query = "UPDATE `{$this->getTableName()}` SET {$final} WHERE `{$this->getPrimaryKey()}` = '{$id}'";
+            // echo $query;
+            // die;
             $adapter = $this->getAdapter();
             $adapter->update($query);
             $this->fetchRow($id);
@@ -196,6 +231,8 @@ class Table
             $fieldName = rtrim($fieldName, ",");
             $values = rtrim($values, ",");
             $query = "INSERT into `{$this->getTableName()}` ({$fieldName}) values ({$values})";
+            // echo $query;
+            // die;
             $adapter = $this->getAdapter();
             $id = $adapter->insert($query);
             $this->fetchRow($id);

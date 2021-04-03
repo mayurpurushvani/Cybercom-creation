@@ -2,7 +2,6 @@
 
 namespace Block\Admin\Admin;
 
-\mage::getBlock('Block\Core\Edit');
 
 class Edit extends \Block\Core\Edit
 {

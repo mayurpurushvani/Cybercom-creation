@@ -2,9 +2,6 @@
 
 namespace Controller\Admin\Customer;
 
-\mage::getController('Controller\Core\Admin');
-
-
 class CustomerAddress extends \Controller\Core\Admin
 {
     public function gridHtmlAction()

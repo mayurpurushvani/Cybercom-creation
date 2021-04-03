@@ -1,7 +1,7 @@
 <?php
 
 namespace Block\Admin\Login;
-\Mage::loadFileByClassName('Block_Core_Template');
+
 class Login extends \Block\Core\Template {
     
     protected $admin = null;

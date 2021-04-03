@@ -2,8 +2,6 @@
 
 namespace Block\Core\Edit;
 
-\Mage::loadFileByClassName('Block\Core\Template');
-
 class Tabs extends \Block\Core\Template
 {
     protected $tableRow = null;

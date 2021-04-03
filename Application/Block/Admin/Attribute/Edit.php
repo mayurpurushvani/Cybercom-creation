@@ -2,8 +2,6 @@
 
 namespace Block\Admin\Attribute;
 
-\mage::getBlock('Block\Core\Edit');
-
 class Edit extends \Block\Core\Edit
 {
     protected $attribute = null;

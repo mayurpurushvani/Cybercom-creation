@@ -2,8 +2,6 @@
 
 namespace Block\Customer\Home;
 
-\mage::getBlock('Block\Core\Template');
-
 class Index extends \Block\Core\Template
 {
     protected $admins = null;

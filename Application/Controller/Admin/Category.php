@@ -2,8 +2,6 @@
 
 namespace Controller\Admin;
 
-\mage::loadFileByClassName('Controller\Core\Admin');
-
 class Category extends \Controller\Core\Admin
 {
 

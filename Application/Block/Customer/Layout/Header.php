@@ -1,7 +1,6 @@
 <?php
 namespace Block\Customer\Layout;
 
-\mage::getBlock('Block\Core\Template');
 class Header extends \Block\Core\Template
 {
     protected $categories = [];

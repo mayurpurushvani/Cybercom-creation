@@ -2,8 +2,6 @@
 
 namespace Block\Admin\Shipment;
 
-\mage::getBlock('Block\Core\Grid');
-
 class Grid extends \Block\Core\Grid
 {
     public function __construct()

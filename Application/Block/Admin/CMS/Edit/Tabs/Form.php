@@ -1,7 +1,7 @@
 <?php
 
 namespace Block\Admin\CMS\Edit\Tabs; 
-\Mage::loadFileByClassName('Block\Core\Template');
+
 class Form extends \Block\Core\Template {
     public function __construct()
     {

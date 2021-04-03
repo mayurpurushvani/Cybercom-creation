@@ -1,13 +1,10 @@
 <?php
 
 namespace Model;
-\mage::getModel('Model\Core\Adapter');
-\mage::getModel('Model\Core\Table');
-
 
 class Shipment extends \Model\Core\Table
 {
-    
+
     const STATUS_ENABLE = 1;
     const STATUS_DESABLED = 0;
 
@@ -19,8 +16,14 @@ class Shipment extends \Model\Core\Table
     public function getStatusOptions()
     {
         return [
-            self::STATUS_DESABLED=>"Disable", //or use self::
-            self::STATUS_ENABLE=>"Enable"
+            self::STATUS_DESABLED => "Disable", //or use self::
+            self::STATUS_ENABLE => "Enable"
         ];
+    }
+    public function getShipmentMethods()
+    {
+        $query = "SELECT * FROM shipment WHERE STATUS=1";
+        $shipmentMethods = \Mage::getModel('Model\Shipment')->fetchAll($query);
+        return $shipmentMethods;
     }
 }

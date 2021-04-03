@@ -4,9 +4,6 @@ namespace Block\Core;
 
 use PDO;
 
-\Mage::getBlock('Block\Core\Template');
-\Mage::loadFileByClassName('Controller\Core\Pager');
-
 class Grid extends \Block\Core\Template
 {
     protected $collection = [];

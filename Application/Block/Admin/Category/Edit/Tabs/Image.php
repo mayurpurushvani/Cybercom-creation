@@ -2,7 +2,7 @@
 
 namespace Block\Admin\Category\Edit\Tabs;
 
-\Mage::loadFileByClassName('Block\Core\Template');
+
 class Image extends \Block\Core\Template
 {
 

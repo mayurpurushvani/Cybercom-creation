@@ -37,7 +37,7 @@ $customerGroups = $this->getCustomerGroup();
                                     echo '<td>' . $value->name . '</td>';
                                     echo '<td>' . $value->price . '</td>';
                             ?>
-                                    <td><input type="text" style="background-color : #c0c0c0;" name="groupPrice[<?php echo $rowStatus; ?>][<?php echo $value->groupId; ?>]" value="<?php echo $value->groupPrice; ?>"></td>
+                                    <td><input type="text" class="form-control" name="groupPrice[<?php echo $rowStatus; ?>][<?php echo $value->groupId; ?>]" value="<?php echo $value->groupPrice; ?>"></td>
                                     </tr>
                             <?php
                                 }

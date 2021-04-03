@@ -1,6 +1,5 @@
 <?php
 namespace Controller\Admin\Product;
-\Mage::getController('Controller\Core\Admin');
 
 class GroupPrice extends \Controller\Core\Admin
 {

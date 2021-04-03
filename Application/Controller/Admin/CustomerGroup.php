@@ -1,7 +1,6 @@
 <?php
 
 namespace Controller\Admin;
-\mage::getController('Controller\Core\Admin');
 
 
 class CustomerGroup extends \Controller\Core\Admin

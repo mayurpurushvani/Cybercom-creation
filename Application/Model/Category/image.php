@@ -2,9 +2,6 @@
 
 namespace Model\Category;
 
-\mage::getModel('Model\Core\Adapter');
-\mage::getModel('Model\Core\Table');
-
 
 class Image extends \Model\Core\Table
 {

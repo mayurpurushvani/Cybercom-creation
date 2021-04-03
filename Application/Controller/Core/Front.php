@@ -2,9 +2,6 @@
 
 namespace Controller\Core;
 
-\mage::loadFileByClassName('Model\Core\Request');
-
-
 class Front
 {
     public static function init()

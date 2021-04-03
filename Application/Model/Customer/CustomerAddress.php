@@ -1,8 +1,5 @@
 <?php
 namespace Model\Customer;
-\mage::getModel('Model\Core\Adapter');
-\mage::getModel('Model\Core\Table');
-
 
 class CustomerAddress extends \Model\Core\Table
 {

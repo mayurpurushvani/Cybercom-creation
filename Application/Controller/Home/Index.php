@@ -4,8 +4,6 @@ namespace Controller\Home;
 
 use Exception;
 
-\mage::getController('Controller\Core\Customer');
-
 
 class Index extends \Controller\Core\Customer
 {

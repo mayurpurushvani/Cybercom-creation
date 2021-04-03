@@ -2,7 +2,6 @@
 
 namespace Block\Admin\Brand;
 
-\Mage::loadFileByClassName('Block\Core\Template');
 class Brand extends \Block\Core\Template
 {
 

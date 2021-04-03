@@ -2,8 +2,6 @@
 
 namespace Controller\Admin;
 
-\Mage::getController('Controller\Core\Admin');
-
 class Shipment extends \Controller\Core\Admin
 {
     public function gridHtmlAction()

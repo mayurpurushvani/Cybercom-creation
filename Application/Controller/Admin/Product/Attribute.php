@@ -2,8 +2,6 @@
 
 namespace Controller\Admin\Product;
 
-\Mage::getController('Controller\Core\Admin');
-
 class Attribute extends \Controller\Core\Admin
 {
     public function gridHtmlAction()

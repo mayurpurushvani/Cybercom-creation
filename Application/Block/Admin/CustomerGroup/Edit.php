@@ -1,7 +1,6 @@
 <?php
 
 namespace Block\Admin\CustomerGroup;
-\mage::getBlock('Block\Core\Edit');
 
 class Edit extends \Block\Core\Edit
 {

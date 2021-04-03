@@ -2,8 +2,6 @@
 
 namespace Controller\Admin;
 
-\mage::getController('Controller\Core\Admin');
-
 
 class Attribute extends \Controller\Core\Admin
 {

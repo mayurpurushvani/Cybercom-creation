@@ -5,7 +5,6 @@ namespace Controller\Admin;
 use Exception;
 use Mage;
 
-\mage::getController('Controller\Core\Admin');
 
 
 class Filter extends \Controller\Core\Admin

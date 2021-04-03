@@ -2,9 +2,6 @@
 
 namespace Controller\Core;
 
-\mage::loadFileByClassName('Model\Core\Request');
-\mage::loadFileByClassName('Model\Core\Message');
-
 class Abstracts
 {
     protected $request = null;

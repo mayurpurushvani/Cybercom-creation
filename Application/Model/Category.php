@@ -2,9 +2,6 @@
 
 namespace Model;
 
-\mage::loadFileByClassName('Model\Core\Adapter');
-\mage::loadFileByClassName('Model\Core\Table');
-
 class Category extends \Model\Core\Table
 {
     const STATUS_ENABLE = 1;

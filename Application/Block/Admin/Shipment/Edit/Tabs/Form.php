@@ -1,7 +1,7 @@
 <?php
 
 namespace Block\Admin\Shipment\Edit\Tabs;
-\Mage::loadFileByClassName('Block\Core\Template');
+
 class Form extends \Block\Core\Template {
     
     protected $shipment = null;

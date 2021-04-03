@@ -2,8 +2,6 @@
 
 namespace Model\Admin;
 
-\Mage::getModel('Model\Admin\Session');
-
 class Filter extends \Model\Admin\Session
 {
 

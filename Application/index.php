@@ -1,17 +1,17 @@
 <?php
 
+spl_autoload_register(__NAMESPACE__ . '\Mage::loadFileByClassName');
+
 class Mage
 {
   public static function init()
-  {
-    self::loadFileByClassName('Controller\Core\Front');
+  {;
     Controller\Core\Front::init();
   }
 
   public static function getController($className, $ton = false)
   {
     if (!$ton) {
-      self::loadFileByClassName($className);
       $className = self::buildClassName($className);
       return new $className;
     }
@@ -19,7 +19,6 @@ class Mage
     if ($value) {
       return $value;
     }
-    self::loadFileByClassName($className);
     $className = self::buildClassName($className);
     $value = new $className;
     self::setRegistry($className, $value);
@@ -38,7 +37,7 @@ class Mage
   public static function getBlock($className, $ton = false)
   {
     if (!$ton) {
-      self::loadFileByClassName($className);
+
       $className = self::buildClassName($className);
       return new $className;
     }
@@ -46,7 +45,7 @@ class Mage
     if ($value) {
       return $value;
     }
-    self::loadFileByClassName($className);
+
     $className = self::buildClassName($className);
     $value = new $className;
     self::setRegistry($className, $value);
@@ -56,7 +55,7 @@ class Mage
   public static function getModel($className, $ton = false)
   {
     if (!$ton) {
-      self::loadFileByClassName($className);
+
       $className = self::buildClassName($className);
       return new $className;
     }
@@ -64,7 +63,7 @@ class Mage
     if ($value) {
       return $value;
     }
-    self::loadFileByClassName($className);
+
     $className = self::buildClassName($className);
     $value = new $className;
     self::setRegistry($className, $value);
