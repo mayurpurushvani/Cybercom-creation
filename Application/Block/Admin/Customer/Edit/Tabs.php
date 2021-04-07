@@ -15,7 +15,7 @@ class Tabs extends \Block\Core\Edit\Tabs
     {
         $this->addTab('Form', ['label' => 'Form', 'block' => 'Block\Admin\Customer\Edit\Tabs\Form']);
         if ($this->getRequest()->getGet('editId')) {
-            $this->addTab('customerAddress', ['label' => 'Customer Address', 'block' => 'Block\Admin\Customer\Edit\Tabs\CustomerAddress']);
+            $this->addTab('customerAddress', ['label' => 'Address', 'block' => 'Block\Admin\Customer\Edit\Tabs\CustomerAddress']);
         }
         $this->setDefaultTab('Form');
         return $this;

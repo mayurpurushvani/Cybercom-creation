@@ -8,17 +8,17 @@
 
 
         ?>
-        <h3 class='title-5 m-b-35'>Manage Category Image</h3>
+        <h3 style="margin-bottom: 20px;">Manage Category Media</h3>
 
-        <button type="button" class="btn btn-outline-primary btn-sm" onclick="object.resetParams().setForm('#categoryImage').load();" id="btn_delete">Remove</button>
+        <button type="button" class="btn btn-primary btn-lg" onclick="object.resetParams().setForm('#categoryImage').load();" id="btn_delete">Remove</button>
 
         <form method="post" id="categoryImage" action="<?php echo $this->getUrl()->getUrl('update', 'Admin\Category\Image'); ?>">
 
-            <button style="margin-top: 20px;" type="button" onclick="object.resetParams().setForm('#categoryImage').load();" name="btn_update" class="btn btn-outline-primary btn-sm">Update</button>
+            <button style="margin-top: 20px;" type="button" onclick="object.resetParams().setForm('#categoryImage').load();" name="btn_update" class="btn btn-primary btn-lg">Update</button>
 
-            <div class="table-responsive table-responsive-data2">
+            <div class="table-responsive table-responsive-data3">
                 <div class="row">
-                    <table class="table table-striped table-data2 ">
+                    <table class="table table-striped table-data3 ">
                         <thead id="tableHeading">
                             <tr>
                                 <th>Image Id</th>
@@ -43,31 +43,31 @@
 
                                         echo '<tr id="' . $value->imageId . '">'; ?>
 
-                                        <td><label name="img[imageId]"><?php echo $value->imageId; ?></label></td>
+                                        <td><label class="margin70" name="img[imageId]"><?php echo $value->imageId; ?></label></td>
 
                                         <?php echo '<td><img src="' . $value->image . '" style="height:200px; width : 250px;"></img></td>'; ?>
 
-                                        <td><input type="radio" name="img[icon]" value="<?php echo $value->imageId; ?>" <?php if ($value->icon == 1) {
+                                        <td><input type="radio" class="margin70" style="width: 20px; height: 20px; " name="img[icon]" value="<?php echo $value->imageId; ?>" <?php if ($value->icon == 1) {
                                                                                                                             echo "checked";
                                                                                                                         } ?>></td>
-                                        <td><input type="radio" name="img[base]" value="<?php echo $value->imageId; ?>" <?php if ($value->base == 1) {
+                                        <td><input type="radio" class="margin70" style="width: 20px; height: 20px; " name="img[base]" value="<?php echo $value->imageId; ?>" <?php if ($value->base == 1) {
                                                                                                                             echo "checked";
                                                                                                                         } ?>></td>
-                                        <td><input type="checkbox" name="img[data][<?php echo $value->imageId; ?>][banner]" <?php if ($value->banner == 1) {
+                                        <td><input type="checkbox" class="margin70" style="width: 20px; height: 20px; " name="img[data][<?php echo $value->imageId; ?>][banner]" <?php if ($value->banner == 1) {
                                                                                                                                 echo "checked";
                                                                                                                             } ?>></td>
 
                                         <?php
                                         if ($value->status != 1) {
                                         ?>
-                                            <td><a style="color: white;" onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('select', 'Admin\Category\Image', ['editId' => $value->imageId, 'selectId' => $value->status, 'categoryId' => $categoryId]) ?>').resetParams().load(); " title="Active" id="activeBtn" class="btn btn-success btn-sm">Active</a></td>
+                                            <td><a style="color: white;" onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('select', 'Admin\Category\Image', ['editId' => $value->imageId, 'selectId' => $value->status, 'categoryId' => $categoryId]) ?>').resetParams().load(); " title="Active" id="activeBtn" class="btn btn-success btn-lg margin70">Active</a></td>
                                         <?php } else { ?>
-                                            <td><a style="color: white;" onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('select', 'Admin\Category\Image', ['editId' => $value->imageId, 'selectId' => $value->status, 'categoryId' => $categoryId]) ?>').resetParams().load(); " title="In active" id="inactiveBtn" class="btn btn-danger btn-sm">Inactive</a> </td>
+                                            <td><a style="color: white;" onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('select', 'Admin\Category\Image', ['editId' => $value->imageId, 'selectId' => $value->status, 'categoryId' => $categoryId]) ?>').resetParams().load(); " title="In active" id="inactiveBtn" class="btn btn-danger btn-lg margin70">Inactive</a> </td>
                                         <?php } ?>
 
                                         <input type="hidden" name="categoryId" value=<?php echo $value->categoryId ?>>
 
-                                        <td><input type='checkbox' name="remove" value="<?php echo $value->imageId ?>"></td>
+                                        <td><input type='checkbox' style="width: 20px; height: 20px; " class="margin70" name="remove" value="<?php echo $value->imageId ?>"></td>
 
                                         </td>
                                         </tr>
@@ -89,7 +89,7 @@
 
     <input type="file" style="margin-top: 50px;" name="image" id="file" required>
 
-    <button type="button" id="btn_upload" class="btn btn-primary">Upload</button>
+    <button type="button" id="btn_upload" class="btn btn-primary btn-lg">Upload</button>
 
 </form>
 

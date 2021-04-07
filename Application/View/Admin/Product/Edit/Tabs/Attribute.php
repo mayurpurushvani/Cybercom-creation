@@ -6,7 +6,7 @@
 
 
 
-        <h3 class='title-5 m-b-35'>Attribute</h3>
+        <h2 style="margin-bottom: 20px;">Attribute</h2>
 
 
         <form method="post" id="attributeProductForm" action="<?php echo $this->getUrl()->getUrl('save', 'Admin\Product\Attribute'); ?>">
@@ -23,7 +23,7 @@
 
                                 <!-- SELECT MULTIPLE -->
                                 <?php if ($options) : ?>
-                                    <strong><label class="form-control-label"><?php echo $value->name; ?></label> </strong>
+                                    <strong><label><?php echo $value->name; ?></label> </strong>
                                     <?php if ($value->inputType == 'select-multiple') : ?>
                                         <<?php echo str_replace('-', ' ', $value->inputType); ?> name="<?php echo $value->name; ?>[]" class="form-control">
                                             <?php foreach ($options->getData() as $key => $option) : ?>
@@ -43,7 +43,7 @@
 
                                 <!-- TEXTAREA -->
                                 <?php if ($value->inputType == 'textarea') : ?>
-                                    <strong><label class="form-control-label"><?php echo $value->name; ?></label> </strong>
+                                    <strong><label ><?php echo $value->name; ?></label> </strong>
                                     <<?php  echo $value->inputType; ?> name="<?php echo $value->code ?>" class="form-control">
                                         <?php echo $attributeData->{$value->name}; ?>
                                     </<?php echo $value->inputType; ?>>
@@ -66,13 +66,13 @@
                                 <?php if ($options) : ?>
                                     <?php if ($value->inputType == 'checkbox') : ?>
                                         <?php foreach ($options->getData() as $key => $option) : ?>
-                                            <input type="<?php echo $value->inputType; ?>" value="<?php echo $option->name; ?>" name="<?php echo $value->name; ?>[]" <?php $attributeData1 = explode(',', $attributeData->{$value->name}); ?> <?php foreach ($attributeData1 as $key => $row) : ?> <?php if ($row == $option->name) : ?> checked>
+                                            <input type="<?php echo $value->inputType; ?>" style="width: 25px; height: 25px; " value="<?php echo $option->name; ?>" name="<?php echo $value->name; ?>[]" <?php $attributeData1 = explode(',', $attributeData->{$value->name}); ?> <?php foreach ($attributeData1 as $key => $row) : ?> <?php if ($row == $option->name) : ?> checked>
                                         <?php endif; ?>
 
                                     <?php endforeach; ?>
 
 
-                                    <label><?php echo $option->name; ?></label>
+                                    <label style="font-size: 25px;"><?php echo $option->name; ?></label>
                                 <?php endforeach; ?>
                             <?php endif; ?>
                         <?php endif; ?>
@@ -81,8 +81,8 @@
                         <?php if ($options) : ?>
                             <?php if ($value->inputType == 'radio') : ?>
                                 <?php foreach ($options->getData() as $key => $option) : ?>
-                                    <input type="<?php echo $value->inputType; ?>" value="<?php echo $option->name; ?>" name="<?php echo $value->code ?>" <?php if ($attributeData->{$value->name} == $option->name) : ?> checked <?php endif; ?>>
-                                    <label><?php echo $option->name; ?></label>
+                                    <input type="<?php echo $value->inputType; ?>" style="width: 25px; height: 25px; " value="<?php echo $option->name; ?>" name="<?php echo $value->code ?>" <?php if ($attributeData->{$value->name} == $option->name) : ?> checked <?php endif; ?>>
+                                    <label  style="font-size: 25px;"><?php echo $option->name; ?></label>
                                 <?php endforeach; ?>
 
                             <?php endif; ?>
@@ -96,7 +96,7 @@
             ?>
             <div class="card-body card-block">
                 <div class="form-group">
-                    <button type="button" onclick="object.resetParams().setForm('#attributeProductForm').load();" name="save" class="btn btn-outline-primary btn-sm">
+                    <button type="button" onclick="object.resetParams().setForm('#attributeProductForm').load();" name="save" class="btn btn-primary btn-lg">
                         <i class="fa fa-plus"></i>&nbsp; Save</button>
                 </div>
             </div>

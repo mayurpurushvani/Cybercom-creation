@@ -14,8 +14,8 @@ class Tabs extends \Block\Core\Edit\Tabs
     {
         $this->addTab('Form', ['label' => 'Form', 'block' => 'Block\Admin\Category\Edit\Tabs\Form']);
         if ($this->getRequest()->getGet('editId')) {
-            $this->addTab('Images', ['label' => 'Images', 'block' => 'Block\Admin\Category\Edit\Tabs\Image']);
-            $this->addTab('Products', ['label' => 'Products', 'block' => 'Block\Admin\Category\Edit\Tabs\products']);
+            $this->addTab('Media', ['label' => 'Media', 'block' => 'Block\Admin\Category\Edit\Tabs\Image']);
+            // $this->addTab('Products', ['label' => 'Products', 'block' => 'Block\Admin\Category\Edit\Tabs\products']);
             $this->addTab('Attribute', ['label' => 'Attribute', 'block' => 'Block\Admin\Category\Edit\Tabs\Attribute']);
         }
         $this->setDefaultTab('Form');

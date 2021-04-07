@@ -9,6 +9,8 @@ class Grid extends \Block\Core\Grid
     public function __construct()
     {
         parent::__construct();
+        $this->prepareStatus();
+
     }
     public function prepareColumns()
     {
@@ -38,46 +40,6 @@ class Grid extends \Block\Core\Grid
             'field' => 'createdDate',
             'label' => 'Created Date',
             'type' => 'datetime'
-        ]);
-    }
-
-    public function prepareActions()
-    {
-        $this->addAction('edit', [
-            'label' => 'Edit',
-            'method' => 'getEditUrl',
-            'ajax' => true,
-            'class' => 'btn btn-success btn-sm',
-            'className' => 'category'
-        ]);
-
-        $this->addAction('delete', [
-            'label' => 'Delete',
-            'method' => 'getDeleteUrl',
-            'ajax' => true,
-            'class' => 'btn btn-danger btn-sm',
-            'className' => 'category'
-        ]);
-    }
-
-    public function prepareStatus()
-    {
-        $this->addStatus('1', [
-            'label' => 'Active',
-            'method' => 'getStatusUrl',
-            'ajax' => true,
-            'class' => 'btn btn-success btn-sm',
-            'title' => 'Active',
-            'id' => 'activeBtn'
-        ]);
-
-        $this->addStatus('0', [
-            'label' => 'InActive',
-            'method' => 'getStatusUrl',
-            'ajax' => true,
-            'class' => 'btn btn-danger btn-sm',
-            'title' => 'InActive',
-            'id' => 'activeBtn'
         ]);
     }
 

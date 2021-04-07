@@ -7,6 +7,8 @@ class Grid extends \Block\Core\Grid
     public function __construct()
     {
         parent::__construct();
+        $this->prepareStatus();
+
     }
     public function prepareColumns()
     {
@@ -53,7 +55,7 @@ class Grid extends \Block\Core\Grid
             'value' => $product['price'],
             'name' => 'filter[product][price]',
 
-            'label' => 'Product Price',
+            'label' => 'Product Price (₹)',
             'type' => 'decimal(10,2)'
         ]);
 
@@ -62,7 +64,7 @@ class Grid extends \Block\Core\Grid
             'name' => 'filter[product][discount]',
 
             'field' => 'discount',
-            'label' => 'Discount',
+            'label' => 'Discount (₹)',
             'type' => 'decimal(10,2)'
         ]);
 
@@ -100,44 +102,23 @@ class Grid extends \Block\Core\Grid
             'label' => 'Edit',
             'method' => 'getEditUrl',
             'ajax' => true,
-            'class' => 'btn btn-success btn-sm'
+            'class' => 'btn btn-success btn-md'
         ]);
 
         $this->addAction('delete', [
             'label' => 'Delete',
             'method' => 'getDeleteUrl',
             'ajax' => true,
-            'class' => 'btn btn-danger btn-sm'
+            'class' => 'btn btn-danger btn-md'
         ]);
 
         $this->addAction('addToCart', [
             'label' => 'Add to cart',
             'method' => 'getCartUrl',
             'ajax' => true,
-            'class' => 'btn btn-primary'
+            'class' => 'btn btn-primary btn-md'
         ]);
     
-    }
-
-    public function prepareStatus()
-    {
-        $this->addStatus('1', [
-            'label' => 'Active',
-            'method' => 'getStatusUrl',
-            'ajax' => true,
-            'class' => 'btn btn-success btn-sm',
-            'title' => 'Active',
-            'id' => 'activeBtn'
-        ]);
-
-        $this->addStatus('0', [
-            'label' => 'InActive',
-            'method' => 'getStatusUrl',
-            'ajax' => true,
-            'class' => 'btn btn-danger btn-sm',
-            'title' => 'InActive',
-            'id' => 'activeBtn'
-        ]);
     }
 
 

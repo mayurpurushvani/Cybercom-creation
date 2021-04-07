@@ -13,14 +13,14 @@ $orderDetails = $this->getOrderDetails();
         <table class="table table-striped table-data2 ">
             <thead id="tableHeading">
                 <tr>
-                    <td colspan="3">Customer Name :  <?= $customerName ?></td>
+                    <td colspan="3"><h2>Customer Name :  <?= $customerName ?></h2></td>
                 </tr>
                 <tr>
                     <th>Product Name</th>
                     <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Discount</th>
-                    <th>Total Price</th>
+                    <th>Price (₹)</th>
+                    <th>Discount (₹)</th>
+                    <th>Total Price (₹)</th>
                 </tr>
             </thead>
             <tbody>

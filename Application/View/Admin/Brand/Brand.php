@@ -2,17 +2,17 @@
     <div class="container-fluid">
 
         <?php $brand = $this->getBrand(); ?>
-        <h3 class='title-5 m-b-35'>Manage Brand</h3>
+        <h2 style="margin-bottom: 40px;">Manage Brand</h2>
 
-        <button type="button" class="btn btn-outline-primary btn-sm" onclick="object.resetParams().setForm('#brandImage').load();" id="btn_delete">Remove</button>
+        <button type="button" class="btn btn-danger btn-lg" onclick="object.resetParams().setForm('#brandImage').load();" id="btn_delete">Remove</button>
 
         <form method="post" id="brandImage" action="<?php echo $this->getUrl()->getUrl('update', 'Admin\Brand'); ?>">
 
-            <button style="margin-top: 20px;" type="button" onclick="object.resetParams().setForm('#brandImage').load();" name="btn_update" class="btn btn-outline-primary btn-sm">Update</button>
+            <button style="margin-top: 20px;margin-bottom: 20px; " type="button" onclick="object.resetParams().setForm('#brandImage').load();" name="btn_update" class="btn btn-success btn-lg">Update</button>
 
-            <div class="table-responsive table-responsive-data2">
+            <div class="table-responsive table-responsive-data3">
                 <div class="row">
-                    <table class="table table-striped table-data2 ">
+                    <table class="table table-striped table-data3 ">
                         <thead id="tableHeading">
                             <tr>
                                 <th>Brand Id </th>
@@ -35,25 +35,29 @@
 
                                 foreach ($brand->data as $key => $value) :
                                     echo '<tr id="' . $value->brandId . '">'; ?>
-                                    
+
 
                                     <td><label name="brandId"><?php echo $value->brandId; ?></label></td>
 
                                     <?php echo '<td><img src="' . $value->image . '" style="height:200px; width : 250px;"></img></td>'; ?>
 
-                                    <td><input class="form-control" type="text" name="img[data][<?php echo $value->brandId; ?>][brandName]" value="<?php echo $value->brandName; ?>"></td>
+                                    <td><input class="form-control margin70" type="text" name="img[data][<?php echo $value->brandId; ?>][brandName]" value="<?php echo $value->brandName; ?>"></td>
 
-                                    <td><input class="form-control" type="text" name="img[data][<?php echo $value->brandId; ?>][sortOrder]" value="<?php echo $value->sortOrder; ?>"></td>
+                                    <td><input class="form-control margin70" type="text" name="img[data][<?php echo $value->brandId; ?>][sortOrder]" value="<?php echo $value->sortOrder; ?>"></td>
 
                                     <?php if ($value->status != 1) : ?>
-                                        <td><a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('select', 'Admin\Brand', ['editId' => $value->brandId, 'selectId' => $value->status]) ?>').resetParams().load(); " title="Active" id="activeBtn" style="color: white;" class="btn btn-success btn-sm">Active</a></td>
+                                        <td><a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('select', 'Admin\Brand', ['editId' => $value->brandId, 'selectId' => $value->status]) ?>').resetParams().load(); " title="Active" id="activeBtn" style="color: white;" class="btn btn-success btn-lg margin70">Active</a></td>
                                     <?php else : ?>
-                                        <td><a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('select', 'Admin\Brand', ['editId' => $value->brandId, 'selectId' => $value->status]) ?>').resetParams().load(); " title="In active" id="inactiveBtn" style="color: white;" class="btn btn-danger btn-sm">Inactive</a> </td>
+                                        <td><a onclick="object.setUrl('<?php echo $this->getUrl()->getUrl('select', 'Admin\Brand', ['editId' => $value->brandId, 'selectId' => $value->status]) ?>').resetParams().load(); " title="In active" id="inactiveBtn" style="color: white;" class="btn btn-danger btn-lg margin70">Inactive</a> </td>
                                     <?php endif; ?>
 
-                                    <td><?php echo $value->createdDate; ?></td>
+                                    <td><label class="margin70"><?php echo $value->createdDate; ?></label></td>
 
-                                    <td><input type='checkbox' name="remove" value="<?php echo $value->brandId; ?>"></td>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input margin70" style="width: 25px; height: 25px; " type='checkbox' name="remove" value="<?php echo $value->brandId; ?>">
+                                        </div>
+                                    </td>
 
 
                                     </td>
@@ -71,9 +75,9 @@
 
 <form method="post" id="imageUploadForm" action="<?php echo $this->getUrl()->getUrl('add', 'Admin\Brand'); ?>" enctype="multipart/form-data">
 
-    <input type="file" style="margin-top: 50px;" name="image" id="file" required>
+    <input type="file" class="form-control-lg" style="margin-top: 50px;" name="image" id="file" required>
 
-    <button type="button" id="btn_upload" class="btn btn-primary">Upload</button>
+    <button type="button" id="btn_upload" class="btn btn-primary btn-lg">Upload</button>
 
 </form>
 
@@ -84,7 +88,7 @@
 
         $("#btn_upload").click(function() {
             object.setUrl('<?php echo $this->getUrl()->getUrl("add", "Admin\Brand"); ?>');
-            var fd = new FormData();
+            var fd = new Forlgata();
             var files = $('#file')[0].files;
 
             // Check file selected or not

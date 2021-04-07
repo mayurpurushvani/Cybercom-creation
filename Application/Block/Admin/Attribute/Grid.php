@@ -25,7 +25,7 @@ class Grid extends \Block\Core\Grid
 
         $this->addColumn('entityTypeId', [
             'field' => 'entityTypeId',
-            'label' => 'Entitytype Id',
+            'label' => 'Entitytype Name',
             'value' => $attribute['entityTypeId'],
             'name' => 'filter[attribute][entityTypeId]',
             'type' => 'number'
@@ -39,13 +39,13 @@ class Grid extends \Block\Core\Grid
             'type' => 'text'
         ]);
 
-        $this->addColumn('code', [
-            'field' => 'code',
-            'label' => 'code',
-            'value' => $attribute['code'],
-            'name' => 'filter[attribute][code]',
-            'type' => 'text'
-        ]);
+        // $this->addColumn('code', [
+        //     'field' => 'code',
+        //     'label' => 'code',
+        //     'value' => $attribute['code'],
+        //     'name' => 'filter[attribute][code]',
+        //     'type' => 'text'
+        // ]);
 
         $this->addColumn('inputType', [
             'field' => 'inputType',
@@ -69,23 +69,6 @@ class Grid extends \Block\Core\Grid
             'value' => $attribute['sortOrder'],
             'name' => 'filter[attribute][sortOrder]',
             'type' => 'number'
-        ]);
-    }
-
-    public function prepareActions()
-    {
-        $this->addAction('edit', [
-            'label' => 'Edit',
-            'method' => 'getEditUrl',
-            'ajax' => true,
-            'class' => 'btn btn-success btn-sm'
-        ]);
-
-        $this->addAction('delete', [
-            'label' => 'Delete',
-            'method' => 'getDeleteUrl',
-            'ajax' => true,
-            'class' => 'btn btn-danger btn-sm'
         ]);
     }
 

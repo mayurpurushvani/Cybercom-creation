@@ -21,7 +21,6 @@ class Grid extends \Block\Core\Template
         $this->prepareColumns();
         $this->prepareButtons();
         $this->prepareCollection();
-        $this->prepareStatus();
         $this->prepareFilterAction();
     }
 
@@ -39,17 +38,13 @@ class Grid extends \Block\Core\Template
         return $this;
     }
 
-    public function prepareActions()
-    {
-        return $this;
-    }
     public function prepareFilterAction()
     {
         $this->addFilter('filteration', [
             'label' => 'Apply Filter',
             'method' => 'getFilterUrl',
             'type' => 'text',
-            'class' => 'btn btn-outline-primary btn-sm',
+            'class' => 'btn btn-primary btn-lg',
             'ajax' => true,
         ]);
     }
@@ -64,10 +59,6 @@ class Grid extends \Block\Core\Template
         return $this;
     }
 
-    public function prepareStatus()
-    {
-        return $this;
-    }
     /**COLUMN */
     public function addColumn($key, $value)
     {
@@ -145,7 +136,7 @@ class Grid extends \Block\Core\Template
             'label' => 'Add New',
             'method' => 'getAddNewUrl',
             'ajax' => true,
-            'class' => 'btn btn-outline-primary btn-sm'
+            'class' => 'btn btn-primary btn-lg'
         ]);
     }
     /**COLLECTIONS */
@@ -161,4 +152,42 @@ class Grid extends \Block\Core\Template
         }
         return $this->collection;
     }
+
+    public function prepareActions()
+    {
+        $this->addAction('edit', [
+            'label' => 'Edit',
+            'method' => 'getEditUrl',
+            'ajax' => true,
+            'class' => 'btn btn-success btn-lg'
+        ]);
+
+        $this->addAction('delete', [
+            'label' => 'Delete',
+            'method' => 'getDeleteUrl',
+            'ajax' => true,
+            'class' => 'btn btn-danger btn-lg'
+        ]);
+    }
+    public function prepareStatus()
+    {
+        $this->addStatus('1', [
+            'label' => 'Active',
+            'method' => 'getStatusUrl',
+            'ajax' => true,
+            'class' => 'btn btn-success btn-lg',
+            'title' => 'Active',
+            'id' => 'activeBtn'
+        ]);
+
+        $this->addStatus('0', [
+            'label' => 'InActive',
+            'method' => 'getStatusUrl',
+            'ajax' => true,
+            'class' => 'btn btn-danger btn-lg',
+            'title' => 'InActive',
+            'id' => 'activeBtn'
+        ]);
+    }
+
 }

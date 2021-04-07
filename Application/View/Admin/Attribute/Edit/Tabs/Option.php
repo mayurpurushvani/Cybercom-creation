@@ -9,12 +9,18 @@ $attribute = $this->getAttribute();
 
         <form method="post" id="attributeOptionForm" action="<?php echo $this->getUrl()->getUrl('update', 'Admin\Attribute\Option'); ?>">
 
-            <h3 class='title-5 m-b-35'>Attribute Option</h3>
+            <h2 style="margin-bottom: 20px;">Attribute Option</h2>
 
-            <button type="button" onclick="object.resetParams().setForm('#attributeOptionForm').load();" id="update" class="btn btn-outline-primary btn-sm" name="update" style="margin-bottom: 40px;">Update</button>
-            <button type="button" class="btn btn-outline-primary btn-sm" name="addOption" style="margin-bottom: 40px;" onclick="addRow();">Add Option</button>
+            <button type="button" onclick="object.resetParams().setForm('#attributeOptionForm').load();" id="update" class="btn btn-success btn-lg" name="update" style="margin-bottom: 40px;">Update</button>
+            <button type="button" class="btn btn-primary btn-lg" name="addOption" style="margin-bottom: 40px;" onclick="addRow();">Add Option</button>
 
             <table id="existingOption">
+                <thead>
+                    <tr>
+                        <th class="form-control-label">Label</th>
+                        <th class="form-control-label">Sort Order</th>
+                    </tr>
+                </thead>
                 <tbody>
                     <?php if (!$attribute->getOptions()) : ?>
                         <strong style="padding-left:20px;padding-top:20px;">No Record Found!</strong>
@@ -26,9 +32,9 @@ $attribute = $this->getAttribute();
                                     <input type="hidden" name="option[<?php echo $key; ?>][optionId]" value="<?php echo $option->optionId; ?>">
                                 <?php endif ?>
 
-                                <td><input class="form-control" type="text" name="option[<?php echo $option->optionId; ?>][name]" value="<?php echo $option->name ?>"></td>
-                                <td><input class="form-control" type="text" name="option[<?php echo $option->optionId; ?>][sortOrder]" value="<?php echo $option->sortOrder ?>"></td>
-                                <td><button style="margin-left: 20px;" name="removeOption" type="button" class="btn btn-outline-primary btn-sm" onclick="removeOptions(this)">Remove Option</button></td>
+                                <td><input class="form-control" style="margin-top: 30px;" type="text" name="option[<?php echo $option->optionId; ?>][name]" value="<?php echo $option->name ?>"></td>
+                                <td><input class="form-control"  style="margin-top: 30px;" type="text" name="option[<?php echo $option->optionId; ?>][sortOrder]" value="<?php echo $option->sortOrder ?>"></td>
+                                <td><button style="margin-left: 20px; margin-top: 30px;" name="removeOption" type="button" class="btn btn-danger btn-lg margin" onclick="removeOptions(this)">Remove Option</button></td>
                             </tr>
 
                         <?php endforeach; ?>
@@ -42,9 +48,9 @@ $attribute = $this->getAttribute();
         <div style="display:none;">
             <table id="newOption">
                 <tr>
-                    <td><input class="form-control" type="text" name="new[]"></td>
-                    <td><input class="form-control" type="text" name="new[]"></td>
-                    <td><button style="margin-left: 20px;" type="submit" name="removeOption" class="btn btn-outline-primary btn-sm" onclick="removeOptions(this);">Remove Option</button></td>
+                    <td><input class="form-control"  style="margin-top: 30px;" type="text" name="new[]"></td>
+                    <td><input class="form-control"  style="margin-top: 30px;" type="text" name="new[]"></td>
+                    <td><button style="margin-left: 20px; margin-top: 30px;" type="submit" name="removeOption" class="btn btn-danger btn-lg" onclick="removeOptions(this);">Remove Option</button></td>
                 </tr>
             </table>
         </div>

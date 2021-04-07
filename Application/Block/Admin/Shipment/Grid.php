@@ -7,6 +7,8 @@ class Grid extends \Block\Core\Grid
     public function __construct()
     {
         parent::__construct();
+        $this->prepareStatus();
+
     }
     public function prepareColumns()
     {
@@ -42,7 +44,7 @@ class Grid extends \Block\Core\Grid
             'value' => $shipment['amount'],
             'name' => 'filter[shipment][amount]',
             'field' => 'amount',
-            'label' => 'Amount',
+            'label' => 'Amount (₹)',
             'type' => 'number'
         ]);
 
@@ -60,44 +62,6 @@ class Grid extends \Block\Core\Grid
             'name' => 'filter[shipment][createdDate]',
             'label' => 'Created Date',
             'type' => 'datetime'
-        ]);
-    }
-
-    public function prepareActions()
-    {
-        $this->addAction('edit', [
-            'label' => 'Edit',
-            'method' => 'getEditUrl',
-            'ajax' => true,
-            'class' => 'btn btn-success btn-sm'
-        ]);
-
-        $this->addAction('delete', [
-            'label' => 'Delete',
-            'method' => 'getDeleteUrl',
-            'ajax' => true,
-            'class' => 'btn btn-danger btn-sm'
-        ]);
-    }
-
-    public function prepareStatus()
-    {
-        $this->addStatus('1', [
-            'label' => 'Active',
-            'method' => 'getStatusUrl',
-            'ajax' => true,
-            'class' => 'btn btn-success btn-sm',
-            'title' => 'Active',
-            'id' => 'activeBtn'
-        ]);
-
-        $this->addStatus('0', [
-            'label' => 'InActive',
-            'method' => 'getStatusUrl',
-            'ajax' => true,
-            'class' => 'btn btn-danger btn-sm',
-            'title' => 'InActive',
-            'id' => 'activeBtn'
         ]);
     }
 

@@ -17,12 +17,12 @@ $orderDetails = $cart->getItems()->getData();
     </div> -->
 
     <div class="form-group">
-        <label for="customer">Customer</label>
-        <select name="customer">
+        <label for="customer" class="form-control-label">Customer</label>
+        <select name="customer" class="form-control" style="width: 10%;">
             <option value="<?php echo $customers->customerId ?>"><?php echo $customers->firstName; ?></option>
         </select>
     </div>
-    <h4>Billing Address Form</h4>
+    <h2>Billing Address Form</h2>
     <hr>
     <div class="font-weight-bold form-row">
         <div class="form-group col-md-3">
@@ -47,18 +47,22 @@ $orderDetails = $cart->getItems()->getData();
         <div class="form-group col-md-3">
             <input type="text" class="form-control" name="billing[country]" id="country" placeholder="Country" <?php if ($billingAddress) : ?> value="<?= $billingAddress->country ?>" <?php endif; ?>>
         </div>
-        <div class="checkbox">
-            <label class="small"><input type="checkbox" name="saveBillingAddress"> Save to Address book</label>
 
+        <div class="checkbox">
+            <input type="checkbox" style="height: 20px; width: 20px;" name="saveBillingAddress">
+            <label style="font-size:22px ;">Save to Address book</label>
         </div>
+
     </div>
 
 
-    <h4>Shipping Address Form</h4>
+    <h2>Shipping Address Form</h2>
 
     <hr>
-    <input type="checkbox" name="sameAsBilling">Same As Billing
-
+    <div class="checkbox">
+        <input type="checkbox" style="height: 20px; width: 20px;" name="sameAsBilling">
+        <label style="font-size:22px ;">Same As Billing</label>
+    </div>
     <div class="font-weight-bold form-row">
         <div class="form-group col-md-3">
             <input type="text" class="form-control" name="shipping[address]" id="address" placeholder="Address" <?php if ($shippingAddress) : ?> value="<?= $shippingAddress->address ?>" <?php endif; ?>>
@@ -83,52 +87,63 @@ $orderDetails = $cart->getItems()->getData();
             <input type="text" class="form-control" name="shipping[country]" id="country" placeholder="Country" <?php if ($shippingAddress) : ?> value="<?= $shippingAddress->country ?>" <?php endif; ?>>
         </div>
         <div class="checkbox">
-            <label class="small"><input type="checkbox" name="saveShippingAddress"> Save to Address book</label>
-
+            <input type="checkbox" style="height: 20px; width: 20px;" name="saveShippingAddress">
+            <label style="font-size:22px ;"> Save to Address book</label>
         </div>
     </div>
 
-    <h4>Payment Methods</h4>
+    <h2>Payment Methods</h2>
     <?php foreach ($paymentMethods as $id => $paymentMethod) : ?>
         <div class="radio">
-            <label class="small"><input type="radio" name="paymentMethod" value="<?php echo $paymentMethod->methodId ?>"><?= $paymentMethod->name ?></label>
+            <input type="radio" style="height: 20px; width: 20px;" name="paymentMethod" value="<?php echo $paymentMethod->methodId ?>">
+            <label style="font-size:22px ;"><?= $paymentMethod->name ?></label>
         <?php endforeach; ?>
-
-        <h4>Shipment Methods</h4>
+        </div>
+        <h2>Shipment Methods</h2>
         <?php foreach ($shipmentMethods as $id => $shipmentMethod) : ?>
             <div class="radio">
-                <label class="small"><input type="radio" name="shipmentMethod" value="<?php echo $shipmentMethod->methodId ?>"><?= $shipmentMethod->name ?></label>
+                <input type="radio" style="height: 20px; width: 20px;" name="shipmentMethod" value="<?php echo $shipmentMethod->methodId ?>">
+                <label style="font-size:22px ;"><?= $shipmentMethod->name ?></label>
+
             <?php endforeach; ?>
 
-            <h4>Order Details</h4>
-            <table border="1">
-                <tr>
-                    <td>Product Id</td>
-                    <td>Price</td>
-                    <td>Quantity</td>
-                    <td>Discount</td>
-                    <td>Total</td>
-                </tr>
-                <?php $subtotal = 0;
-                $discount = 0; ?>
-                <?php foreach ($orderDetails as $id => $product) : ?>
-                    <tr>
-                        <?php $subtotal += ($product->price * $product->quantity) - ($product->quantity * $product->discount);
-                        $discount += $product->quantity * $product->discount; ?>
-                        <input type="hidden" name="cartId" value="<?php echo $product->cartId; ?>">
-                        <td><?= $product->productId; ?></td>
-                        <td><?= $product->price; ?></td>
-                        <td><?= $product->quantity; ?></td>
-                        <td><?= $product->quantity * $product->discount; ?></td>
-                        <td><?= ($product->price * $product->quantity) - ($product->quantity * $product->discount) ?></td>
+            <h2>Order Details</h2>
+            <div class="table-responsive table-responsive-data3">
+                <div class="row">
+                    <table class="table table-striped table-data3 ">
+                        <thead>
+                            <tr>
+                                <th>Product Id</th>
+                                <th>Price (₹)</th>
+                                <th>Quantity</th>
+                                <th>Discount</th>
+                                <th>Total (₹)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $subtotal = 0;
+                            $discount = 0; ?>
+                            <?php foreach ($orderDetails as $id => $product) : ?>
+                                <tr>
+                                    <?php $subtotal += ($product->price * $product->quantity) - ($product->quantity * $product->discount);
+                                    $discount += $product->quantity * $product->discount; ?>
+                                    <input type="hidden" name="cartId" value="<?php echo $product->cartId; ?>">
+                                    <td><?= $product->productId; ?></td>
+                                    <td><?= $product->price; ?></td>
+                                    <td><?= $product->quantity; ?></td>
+                                    <td><?= $product->quantity * $product->discount; ?></td>
+                                    <td><?= ($product->price * $product->quantity) - ($product->quantity * $product->discount) ?></td>
 
-                    </tr>
-                <?php endforeach; ?>
-                <tr>
-                    <td colspan="4">Sub Total</td>
-                    <td><?= $subtotal ?></td>
-                </tr>
-            </table>
+                                </tr>
+                            <?php endforeach; ?>
+                            <tr>
+                                <td colspan="4">Sub Total</td>
+                                <td><?= $subtotal ?></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
             <input type="hidden" name="discount" value="<?= $discount; ?>">
             <input type="hidden" name="total" value="<?= $subtotal; ?>">
@@ -136,5 +151,5 @@ $orderDetails = $cart->getItems()->getData();
                                                                                         endif ?>">
             <input type="hidden" name="billingId" <?php if ($billingAddress) : ?> value="<?php echo $billingAddress->addressId;
                                                                                         endif ?>">
-            <button class="btn btn-success" type="button" style="margin-top: 20px;" onclick="object.resetParams().setForm('#form').load(); ">Place Order</button>
+            <button class="btn btn-success btn-lg" type="button" style="margin-top: 20px;" onclick="object.resetParams().setForm('#form').load(); ">Place Order</button>
 </form>

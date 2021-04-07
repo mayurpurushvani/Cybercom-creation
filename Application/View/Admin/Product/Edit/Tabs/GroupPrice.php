@@ -7,13 +7,15 @@ $customerGroups = $this->getCustomerGroup();
 
     <div class="section__content section__content--p30">
         <div class="container-fluid">
-            <h3 class='title-5 m-b-35'>Group Price</h3>
+        
 
-            <button type="button" onclick="object.resetParams().setForm('#groupPriceForm').load();" name="btn_update" class="btn btn-outline-primary btn-sm">Update</button>
+        <h2 style="margin-bottom: 20px;">Group Price</h2>
 
-            <div class="table-responsive table-responsive-data2">
+            <button type="button" style="margin-bottom: 20px;" onclick="object.resetParams().setForm('#groupPriceForm').load();" name="btn_update" class="btn btn-primary btn-lg">Update</button>
+
+            <div class="table-responsive table-responsive-data3">
                 <div class="row">
-                    <table class="table table-striped table-data2 ">
+                    <table class="table table-striped table-data3 ">
                         <thead id="tableHeading">
                             <tr>
                                 <th>Group Id</th>

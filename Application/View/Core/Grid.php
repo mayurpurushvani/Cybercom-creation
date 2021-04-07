@@ -8,13 +8,13 @@
 
 <div class="section__content section__content--p30">
     <div class="container-fluid">
-        <h3 class='title-5 m-b-35'><?= $this->getTitle(); ?></h3>
+        <h2 style="margin-bottom: 40px;"><?= $this->getTitle(); ?></h2>
 
         <?php if ($buttons) : ?>
             <?php foreach ($buttons as $key => $button) : ?>
                 <?php if ($button['ajax']) : ?>
-                    <a href="javascript:void(0)" onclick="<?= $this->getAddNewUrl($button['method']); ?>" class="<?= $button['class'] ?>"><?= $button['label'] ?></a>
-                    <a href="#" class="btn btn-danger btn-sm" onclick="clearFilter(); object.resetParams().setForm('#form').load();">Clear Filter</a>
+                    <a href="javascript:void(0)"  onclick="<?= $this->getAddNewUrl($button['method']); ?>" class="<?= $button['class'] ?>"><?= $button['label'] ?></a>
+                    <a href="#" class="btn btn-danger btn-lg" style="font-weight: bold;" onclick="clearFilter(); object.resetParams().setForm('#form').load();">Clear Filter</a>
                 <?php else : ?>
                     <a href="<?= $this->getAddNewUrl($button['method']); ?>" class="<?= $button['class'] ?> "><?= $button['label'] ?></a>
 
@@ -24,9 +24,9 @@
 
         <form method="post" id="form" action="<?php echo $this->getUrl()->getUrl('filter', 'Admin\Filter', null, false); ?>">
 
-            <div class="table-responsive table-responsive-data2">
+            <div class="table-responsive table-responsive-data3">
                 <div class="row">
-                    <table class="table table-striped table-data2">
+                    <table class="table table-striped table-data3">
                         <thead id="tableHeading">
                             <tr>
                                 <?php if ($columns) : ?>
@@ -48,7 +48,7 @@
                                 <?php if ($filters) : ?>
                                     <?php foreach ($filters as $key => $filter) : ?>
                                         <?php if ($filter['ajax']) : ?>
-                                            <a href="javascript:void(0)" onclick="object.resetParams().setForm('#form').load();" class="<?= $filter['class'] ?> class" style="margin-top: 20px; margin-left: 10px;"><?= $filter['label'] ?></a>
+                                            <a href="javascript:void(0)" onclick="object.resetParams().setForm('#form').load();" class="<?= $filter['class'] ?> class" style="margin-top: 20px; margin-bottom: 20px; margin-left: 100px;"><?= $filter['label'] ?></a>
                                         <?php endif; ?>
                                     <?php endforeach; ?>
                                 <?php endif; ?>

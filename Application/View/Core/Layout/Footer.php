@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="copyright">
-            <p>Copyright©2021 All Right Reserved by mayur purushvani | QuesteCom</p>
+            <strong>Copyright©2021 All Right Reserved by QuesteCom</strong>
         </div>
     </div>
 </div>

@@ -2,17 +2,19 @@
     <div class="container-fluid">
 
         <?php $media = $this->getMedia(); ?>
-        <h3 class='title-5 m-b-35'>Media</h3>
+      
 
-        <button type="button" class="btn btn-outline-primary btn-sm" onclick="object.resetParams().setForm('#mediaUpdateForm').load();" id="btn_delete">Remove</button>
+        <h2 style="margin-bottom: 20px;">Media</h2>
+
+        <button type="button" class="btn btn-danger btn-lg" onclick="object.resetParams().setForm('#mediaUpdateForm').load();" id="btn_delete">Remove</button>
 
         <form method="post" id="mediaUpdateForm" action="<?php echo $this->getUrl()->getUrl('update', 'Admin\Product\Media'); ?>">
 
-            <button style="margin-top: 20px;" type="button" onclick="object.resetParams().setForm('#mediaUpdateForm').load();" name="btn_update" class="btn btn-outline-primary btn-sm">Update</button>
+            <button style="margin-bottom: 20px;margin-top : 20px;" type="button" onclick="object.resetParams().setForm('#mediaUpdateForm').load();" name="btn_update" class="btn btn-success btn-lg">Update</button>
 
-            <div class="table-responsive table-responsive-data2">
+            <div class="table-responsive table-responsive-data3">
                 <div class="row">
-                    <table class="table table-striped table-data2 ">
+                    <table class="table table-striped table-data3 ">
                         <thead id="tableHeading">
                             <tr>
                                 <th>Media Id </th>
@@ -40,24 +42,24 @@
                                         echo '<tr id="' . $value->mediaId . '">';
                             ?>
                                         <td><label name="img[mediaId]"><?php echo $value->mediaId; ?></label></td>
-                                        <?php echo '<td><img src="' . $value->image . '" style="height:200px; width : 250px;"></img></td>';
+                                        <?php echo '<td><img src="' . $value->image . '" style="height:200px; width : 200px;"></img></td>';
 
                                         ?>
-                                        <td><input type="text" class="form-control" name="img[data][<?php echo $value->mediaId; ?>][label]" value="<?php echo $value->label; ?>"></td>
+                                        <td><input type="text" class="form-control margin70" name="img[data][<?php echo $value->mediaId; ?>][label]" value="<?php echo $value->label; ?>"></td>
 
-                                        <td><input type="radio" name="img[thumb]" value="<?php echo $value->mediaId; ?>" <?php if ($value->thumb == 1) {
+                                        <td><input type="radio" style="width: 20px; height: 20px; " name="img[thumb]" class="margin70" value="<?php echo $value->mediaId; ?>" <?php if ($value->thumb == 1) {
                                                                                                                                 echo "checked";
                                                                                                                             } ?>></td>
-                                        <td><input type="radio" name="img[small]" value="<?php echo $value->mediaId; ?>" <?php if ($value->small == 1) {
+                                        <td><input type="radio" style="width: 20px; height: 20px; " class="margin70" name="img[small]" value="<?php echo $value->mediaId; ?>" <?php if ($value->small == 1) {
                                                                                                                                 echo "checked";
                                                                                                                             } ?>></td>
-                                        <td><input type="radio" name="img[base]" value="<?php echo $value->mediaId; ?>" <?php if ($value->base == 1) {
+                                        <td><input type="radio"  style="width: 20px; height: 20px; " class="margin70" name="img[base]" value="<?php echo $value->mediaId; ?>" <?php if ($value->base == 1) {
                                                                                                                             echo "checked";
                                                                                                                         } ?>></td>
-                                        <td><input type="checkbox" name="img[data][<?php echo $value->mediaId; ?>][gallary]" <?php if ($value->gallary == 1) {
+                                        <td><input type="checkbox"  style="width: 20px; height: 20px; " class="margin70" name="img[data][<?php echo $value->mediaId; ?>][gallary]" <?php if ($value->gallary == 1) {
                                                                                                                                     echo "checked";
                                                                                                                                 } ?>></td>
-                                        <td><input type='checkbox' name="remove" value="<?php echo $value->mediaId ?>"></td>
+                                        <td><input type='checkbox' style="margin-right: 40px;width: 20px; height: 20px; " name="remove" class="margin70" value="<?php echo $value->mediaId ?>"></td>
 
                             <?php
 
@@ -76,7 +78,7 @@
 
     <input type="file" name="image" id="file" style="margin-top: 20px;" required>
 
-    <button type="button" id="btn_upload" class="btn btn-primary">Upload</button>
+    <button type="button" id="btn_upload" class="btn btn-primary btn-lg">Upload</button>
 
 </form>
 
